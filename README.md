@@ -6,4 +6,4 @@
 5. Start making issues for desired features
 6. Use a project + milestone for managing what will be in the first release, and what can be done later
 
-![colors](https://github.com/rjake/colorbuildR/blob/master/colors_hsl_decimals.PNG)
+![colors](https://github.com/rjake/colorbuildR/blob/master/colors.PNG)
