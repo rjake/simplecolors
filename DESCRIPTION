@@ -1,0 +1,32 @@
+Package: colorbuildr
+Title: A simplified method for selecting colors and builing color palettes
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Jake",
+           family = "Riley",
+           role = c("aut", "cre"),
+           email = "rjake@sas.upenn.edu",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Using the HLS colorspace model, colors and color palettes can be generated with ease.
+    You can build a light-to-dark palette in the same hue by holding the hue and saturation values 
+    constant and varying the lightness. Similarly, you can build a nice color palette across hues 
+    by holding the light and saturation values constant and varying the hue.   
+License: GNU General Public License
+URL: https://github.com/rjake/colorbuildr
+BugReports: https://github.com//rjake/colorbuildr/issues
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat,
+    covr,
+    spelling
+Language: en-US
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
+Imports: 
+    magrittr,
+    ggplot2,
+    dplyr,
+    forcats,
+    stats,
+    stringr
