@@ -97,7 +97,7 @@ build_colors <- function() {
 #' @export
 #' @importFrom dplyr mutate
 #' @importFrom forcats fct_rev
-#' @importFrom ggplot2 ggplot aes facet_grid geom_tile scale_fill_identity labs
+#' @importFrom ggplot2 ggplot aes facet_wrap geom_tile scale_fill_identity labs
 #'
 #' @examples
 #'
@@ -139,6 +139,7 @@ show_colors <- function(display_type = "colorbuildr") {
       )
   }
 
+  #vignette("spc", "rocqi")
   df %>%
     ggplot() +
     facet_wrap(~use_h + paste0(color, " (", letter, ")"), nrow = 2) +
