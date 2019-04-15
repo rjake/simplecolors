@@ -4,12 +4,15 @@
 \name{colorbuildr-package}
 \alias{colorbuildr}
 \alias{colorbuildr-package}
-\title{colorbuildr: A simplified method for selecting colors and builing color palettes}
+\title{colorbuildr: A simplified method for selecting colors and builing
+    color palettes}
 \description{
-Using the HLS colorspace model, colors and color palettes can be generated with ease.
-    You can build a light-to-dark palette in the same hue by holding the hue and saturation values 
-    constant and varying the lightness. Similarly, you can build a nice color palette across hues 
-    by holding the light and saturation values constant and varying the hue.
+Using the HLS colorspace model, colors and color
+    palettes can be generated with ease.  You can build a light-to-dark
+    palette in the same hue by holding the hue and saturation values
+    constant and varying the lightness. Similarly, you can build a nice
+    color palette across hues by holding the light and saturation values
+    constant and varying the hue.
 }
 \seealso{
 Useful links:

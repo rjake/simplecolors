@@ -27,7 +27,6 @@ Language: en-US
 RoxygenNote: 6.1.1
 Imports: 
     magrittr,
-    ggplot2,
     dplyr,
     forcats,
     stats,
