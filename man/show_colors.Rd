@@ -13,7 +13,7 @@ show_colors(display_type = "colorbuildr")
 ggplot
 }
 \description{
-Show all available colors
+Based on the \code{\link{build_colors}} function
 }
 \examples{
 

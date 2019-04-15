@@ -7,7 +7,7 @@
 show_palette(df = color_table)
 }
 \arguments{
-\item{df}{passing a data frame with \code{H360}, \code{color}, \code{letter}, \code{sat}, \code{light} and \code{hex}}
+\item{df}{passing a data frame with `H360`, `color`, `letter`, `sat`, `light` and `hex`}
 }
 \description{
 Title

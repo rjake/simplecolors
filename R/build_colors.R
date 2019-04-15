@@ -89,7 +89,7 @@ build_colors <- function() {
 
 #' Show all available colors
 #'
-#' Based on the \code{\link\{build_colors}} function
+#' Based on the \code{\link{build_colors}} function
 #'
 #' @param hue_max
 #'
@@ -97,7 +97,7 @@ build_colors <- function() {
 #' @export
 #' @importFrom dplyr mutate
 #' @importFrom forcats fct_rev
-#' @importFrom ggplot2 ggplot facet_grid geom_tile scale_fill_identity labs
+#' @importFrom ggplot2 ggplot aes facet_grid geom_tile scale_fill_identity labs
 #'
 #' @examples
 #'

@@ -20,8 +20,4 @@
 #' \item{B}{the blue of the RGB value}
 #' \item{255}{for convenience as some HLS seleciton tools use a 0-255 scale}
 #' }
-#'
-#'
-#'
-
 "color_table"

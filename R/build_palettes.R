@@ -12,8 +12,8 @@
 cb <- function(color = "grey3") {
   cb_names <-
     setNames(
-      color_table$hex,
-      color_table$color_name
+      colorbuildr::color_table$hex,
+      colorbuildr::color_table$color_name
     )
 
   unname(cb_names[color])
@@ -29,7 +29,7 @@ cb <- function(color = "grey3") {
 #'
 #' @export
 #'
-#' @importFrom ggplot2 ggplot facet_grid geom_tile scale_y_reverse scale_fill_identity labs
+#' @importFrom ggplot2 ggplot aes facet_grid geom_tile scale_y_reverse scale_fill_identity labs
 #'
 #' @examples
 #'
@@ -90,7 +90,7 @@ cb_pal_within <- function(hue,
 
   df <-
     suppressWarnings(
-      color_table %>%
+      colorbuildr::color_table %>%
         filter(
           color %in% !! hue,
           light %in% !! light,
@@ -207,7 +207,7 @@ cb_pal_across <- function(palette = "ROYLCBVMW",
 
 
     df <-
-      color_table %>%
+      colorbuildr::color_table %>%
       filter(
         str_detect(letter, paste0("[", palette, "]")),
         light %in% !! light,
