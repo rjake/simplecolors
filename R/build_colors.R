@@ -96,12 +96,13 @@ build_colors <- function() {
 
 #' Show all available colors
 #'
-#' Displays the \code{\link{color_table}} values
+#' Plots the \code{\link{color_table}} values. The hue reference range can be adjusted for consistency across different tools.
 #'
 #' @param display_type a string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.
 #'
 #' @return ggplot
 #' @export
+#'
 #' @importFrom dplyr mutate
 #' @importFrom forcats fct_rev
 #' @importFrom ggplot2 ggplot aes facet_wrap geom_tile scale_fill_identity labs element_rect
