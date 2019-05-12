@@ -12,6 +12,3 @@ data.frame
 \description{
 Create a table using the HLS framework, hue values on 0-1, 0-255, and 0-360 ranges
 }
-\examples{
-
-}

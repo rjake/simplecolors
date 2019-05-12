@@ -16,11 +16,11 @@
 \item{color_sat}{the color + the saturation, ex: "brightblue", "dullred"}
 \item{color_name}{the final unique name: color_sat + lightness, ex: "brightblue2", "mutedorange3"}
 \item{H1}{hue on a 0-1 scale}
-\item{HEX}{the hex code of the color}
+\item{hex}{the hex code of the color}
 \item{R}{the red of the RGB value}
 \item{G}{the green of the RGB value}
 \item{B}{the blue of the RGB value}
-\item{255}{for convenience as some HLS seleciton tools use a 0-255 scale}
+\item{H255}{for convenience as some HLS seleciton tools use a 0-255 scale}
 }}
 \usage{
 color_table

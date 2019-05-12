@@ -17,7 +17,7 @@ Using the HLS colorspace model, colors and color
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/rjake/colorbuildr}
+  \item \url{https://github.com/rjake/simplecolors}
   \item Report bugs at \url{https://github.com//rjake/simplecolors/issues}
 }
 

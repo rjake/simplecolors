@@ -7,7 +7,7 @@
 show_colors(display_type = "simplecolors")
 }
 \arguments{
-\item{hue_max}{}
+\item{display_type}{a string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.}
 }
 \value{
 ggplot
