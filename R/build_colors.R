@@ -105,7 +105,7 @@ build_colors <- function() {
 #'
 #' @importFrom dplyr mutate
 #' @importFrom forcats fct_rev
-#' @importFrom ggplot2 ggplot aes facet_wrap geom_tile scale_fill_identity labs element_rect
+#' @importFrom ggplot2 ggplot aes facet_wrap geom_tile scale_fill_identity labs theme element_rect
 #'
 #' @examples
 #'
