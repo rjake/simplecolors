@@ -1,13 +1,13 @@
 #' simplecolors color names
 #'
-#' @param color the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"
+#' @param ... the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"
 #'
 #' @export
 #'
 #' @importFrom stats setNames
 #'
 #' @examples
-#' sc(c("violet4", "brightteal3"))
+#' sc("violet4", "brightteal3")
 #'
 sc <- function(...) {
   sc_names <-
@@ -27,6 +27,7 @@ sc <- function(...) {
 #' @param df passing a data frame with `H360`, `color`, `letter`, `sat`, `light` and `hex`
 #'
 #' @importFrom ggplot2 ggplot aes facet_grid geom_tile scale_y_reverse scale_fill_identity labs
+#' @export
 #'
 #' @examples
 #'
@@ -65,7 +66,7 @@ specify_output <- function(df, return = NULL){
 
   } else if (return == "plot") {
 
-    df %>% show_palette()
+    df %>% simplecolors::show_palette()
 
   }
 }
