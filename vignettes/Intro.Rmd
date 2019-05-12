@@ -1,0 +1,138 @@
+---
+title: "Intro"
+output: 
+  rmarkdown::html_vignette:
+    df_print: kable
+vignette: >
+  %\VignetteIndexEntry{Intro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(tidyverse)
+library(simplecolors)
+```
+
+# Rationale
+Trying to find a good color palette is difficult. The default `colorspace` colors have inconsisent names and the lightness/saturation are all over the place. Using the `colorspace::HLS()` function however, a smaller, consistent set of colors allows palettes to be made both within one color or across hues. 
+
+Here's a comparison of the base colors (left) and the simplecolors (right).
+
+![comparison](images/comparison.png){width=600px}
+
+# Construction
+
+To get started there are 8 hues, 4 types of saturation, and 5 levels of lightness plus a greyscale. To use a color, just combine the 3 parts:
+
+|optional saturation|color name|lightness|
+|-------------------|----------|---------|
+|bright |red|1|
+|""|orange|2|
+|muted|yellow|...|
+|dull|...|5|
+||grey|0-6|
+
+For example, the following code will return the corresponding hex values
+
+* `sc("blue")` = `r sc("blue")`
+* `sc("blue5")` = `r sc("blue5")`
+* `sc("dullblue3")` = `r sc("dullblue3")`
+
+# The `sc()` function
+This function stands for **s**imple**c**olors. You can specify base colors
+```{r}
+sc(c("red", "violet", "pink"))
+```
+
+or add modifiers
+```{r}
+sc(c("brightblue4", "mutedorange5", "grey3"))
+```
+
+# Palettes
+There are multiple ways to access palettes
+
+* `sc_within()` - within 1 hue, the default is a lightness of 2:6, and no modifier (sat == "")
+* `sc_across()` - holding light and saturation constant (at your choosing), a palette will be built across hues in the order you specify. The palette order is created using the first letter (uppercase) of each color, or "Gy" for "grey".
+* `sc_[color]()` like sc_red()
+
+```{r}
+sc_within(hue = "teal", light = 3:5, sat = "bright")
+```
+
+```{r}
+sc_across(palette = "OTVGy", light = 4, sat = "muted")
+```
+
+## Types of outputs
+There are 3 main outputs for these palettes that can be specified via `return = `
+
+#### Using `sc_within()`
+```{r}
+sc_within(hue = "blue", light = 2:5, sat = "") #defaults
+```
+
+```{r}
+sc_within(hue = "blue", return = "table")
+```
+
+```{r}
+sc_within(hue = "blue", return = "plot")
+```
+
+#### Using `sc_across()`
+```{r}
+sc_across(palette = "ROY", light = 3)
+```
+
+```{r}
+sc_across(palette = "ROY", light = 3, return = "table")
+```
+
+```{r}
+sc_across(palette = "ROY", light = 3, sat = "bright", return = "plot")
+
+```
+
+Here is a list of all colors abbreviations  you can use in the palette
+```{r}
+color_table %>% 
+  distinct(color, letter)
+```
+
+## `sc_red()`, `sc_blue()`, etc...
+There is also a `sc_within()` pallete defaulted for each color
+```{r}
+sc_red(1:4, "bright")
+```
+
+```{r}
+sc_blue(5:2, return = "table")
+```
+
+```{r}
+sc_pink(c(1,3,5), sat = "dull", return = "plot")
+```
+
+And here's an example where you might use it in a ggplot
+```{r}
+blue_and_red <-  c(
+  sc_blue(4:2, "bright"), 
+  sc_red(2:4, "bright")
+)
+
+iris %>% 
+  mutate(cut = ntile(Sepal.Length, 6)) %>% 
+  ggplot(aes(Sepal.Width, Sepal.Length, color = factor(cut))) +
+  geom_count(size = 5) +
+  #setting your custom gradients
+  scale_color_manual(values = blue_and_red) +
+  theme_minimal()
+```
+
