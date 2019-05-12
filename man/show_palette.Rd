@@ -14,6 +14,6 @@ Title
 }
 \examples{
 
-cb_pal_within("blue", sat = unique(color_table$sat), return = "table") \%>\% show_palette()
+sc_pal_within("blue", sat = unique(color_table$sat), return = "table") \%>\% show_palette()
 
 }

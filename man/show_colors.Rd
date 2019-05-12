@@ -4,7 +4,7 @@
 \alias{show_colors}
 \title{Show all available colors}
 \usage{
-show_colors(display_type = "colorbuildr")
+show_colors(display_type = "simplecolors")
 }
 \arguments{
 \item{hue_max}{}
@@ -17,7 +17,7 @@ Based on the \code{\link{build_colors}} function
 }
 \examples{
 
-show_colors(display_type = "colorbuildr")
+show_colors(display_type = "simplecolors")
 show_colors(display_type = "1")
 show_colors(display_type = "255")
 show_colors(display_type = "260")

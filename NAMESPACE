@@ -2,9 +2,9 @@
 
 export("%>%")
 export(build_colors)
-export(cb)
-export(cb_pal_across)
-export(cb_pal_within)
+export(sc)
+export(sc_pal_across)
+export(sc_pal_within)
 export(show_colors)
 export(show_hues)
 export(show_palette)

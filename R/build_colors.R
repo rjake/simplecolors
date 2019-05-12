@@ -101,12 +101,12 @@ build_colors <- function() {
 #'
 #' @examples
 #'
-#' show_colors(display_type = "colorbuildr")
+#' show_colors(display_type = "simplecolors")
 #' show_colors(display_type = "1")
 #' show_colors(display_type = "255")
 #' show_colors(display_type = "260")
 
-show_colors <- function(display_type = "colorbuildr") {
+show_colors <- function(display_type = "simplecolors") {
 
   df <-
     color_table %>%

@@ -1,4 +1,4 @@
-#' colorbuildr color names
+#' simplecolors color names
 #'
 #' @param color the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"
 #'
@@ -7,16 +7,16 @@
 #' @importFrom stats setNames
 #'
 #' @examples
-#' cb(c("violet4", "brightcyan3"))
+#' sc(c("violet4", "brightcyan3"))
 #'
-cb <- function(color = "grey3") {
-  cb_names <-
+sc <- function(color = "grey3") {
+  sc_names <-
     setNames(
-      colorbuildr::color_table$hex,
-      colorbuildr::color_table$color_name
+      simplecolors::color_table$hex,
+      simplecolors::color_table$color_name
     )
 
-  unname(cb_names[color])
+  unname(sc_names[color])
 
 }
 
@@ -33,7 +33,7 @@ cb <- function(color = "grey3") {
 #'
 #' @examples
 #'
-#' cb_pal_within("blue", sat = unique(color_table$sat), return = "table") %>% show_palette()
+#' sc_pal_within("blue", sat = unique(color_table$sat), return = "table") %>% show_palette()
 #'
 show_palette <- function(df = color_table) {
   df %>%
@@ -65,12 +65,12 @@ show_palette <- function(df = color_table) {
 #'
 #' @examples
 #'
-#' cb_pal_within("violet", 1:6, "bright" , return = "table")
-#' cb_pal_within("violet", 2:4, c("bright", "muted"), return = "plot")
-#' cb_pal_within("red", 1:3)
+#' sc_pal_within("violet", 1:6, "bright" , return = "table")
+#' sc_pal_within("violet", 2:4, c("bright", "muted"), return = "plot")
+#' sc_pal_within("red", 1:3)
 #'
 #'
-cb_pal_within <- function(hue,
+sc_pal_within <- function(hue,
                           light = c(2:6),
                           sat = "",
                           return = NULL) {
@@ -90,7 +90,7 @@ cb_pal_within <- function(hue,
 
   df <-
     suppressWarnings(
-      colorbuildr::color_table %>%
+      simplecolors::color_table %>%
         filter(
           color %in% !! hue,
           light %in% !! light,
@@ -127,7 +127,7 @@ cb_pal_within <- function(hue,
 #
 
 make_color_function <- function(hue, light = 2:6, sat = "", ...) {
-        cb_pal_within(
+        sc_pal_within(
           hue = hue,
           light = light,
           sat = sat,
@@ -150,7 +150,7 @@ pal_blues(sat = c("bright", "muted"), return = "plot")
 #     assign(
 #       paste0("delete_", unique_colors[i]),
 #       function(light = 2:5, sat = "", ..., envir = current()) {
-#         cb_pal_within(
+#         sc_pal_within(
 #           hue = unique_colors[i],
 #           light = light,
 #           sat = sat,
@@ -190,24 +190,24 @@ pal_blues(sat = c("bright", "muted"), return = "plot")
 #' @importFrom stringr str_detect
 #'
 #' @examples
-#' cb_pal_across()
-#' cb_pal_across(sat = "bright", return = "plot")
-#' cb_pal_across(sat = c("bright", "muted"), return = "plot")
-#' cb_pal_across(return = "plot")
+#' sc_pal_across()
+#' sc_pal_across(sat = "bright", return = "plot")
+#' sc_pal_across(sat = c("bright", "muted"), return = "plot")
+#' sc_pal_across(return = "plot")
 #'
-#' cb_pal_across(palette = "BO", sat = "bright", return = "plot")
-#' cb_pal_across(palette = "BO", sat = "bright", return = "table")
-#' cb_pal_across(palette = "RYCMG", light =  c(1,4), return = "plot")
+#' sc_pal_across(palette = "BO", sat = "bright", return = "plot")
+#' sc_pal_across(palette = "BO", sat = "bright", return = "table")
+#' sc_pal_across(palette = "RYCMG", light =  c(1,4), return = "plot")
 #'
 
-cb_pal_across <- function(palette = "ROYLCBVMW",
+sc_pal_across <- function(palette = "ROYLCBVMW",
                           light = 3,
                           sat = "bright",
                           return = NULL) {
 
 
     df <-
-      colorbuildr::color_table %>%
+      simplecolors::color_table %>%
       filter(
         str_detect(letter, paste0("[", palette, "]")),
         light %in% !! light,
@@ -244,7 +244,7 @@ cb_pal_across <- function(palette = "ROYLCBVMW",
 #' show_hues()
 #'
 show_hues <- function(){
-  cb_pal_across(return = "plot") +
+  sc_pal_across(return = "plot") +
     labs(x = "also grey", y = "") +
     theme(
       axis.ticks = element_blank(),
