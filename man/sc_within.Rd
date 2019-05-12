@@ -4,12 +4,12 @@
 \alias{sc_within}
 \title{Generates a palette within 1 hue}
 \usage{
-sc_within(hue, light = c(2:6), sat = "", return = NULL)
+sc_within(hue, light = c(2:5), sat = "", return = NULL)
 }
 \arguments{
 \item{hue}{ex: "red", "blue", "violet"}
 
-\item{light}{the lightness of the color, ex: 1:7, best at 2:6}
+\item{light}{the lightness of the color, ex: 1:5}
 
 \item{sat}{the saturation of the color, ex: "bright", "muted", "dull" or "" (base)}
 
@@ -20,7 +20,7 @@ Generates a palette within 1 hue
 }
 \examples{
 
-sc_within("violet", 1:6, "bright" , return = "table")
+sc_within("violet", 1:5, "bright" , return = "table")
 sc_within("violet", 2:4, c("bright", "muted"), return = "plot")
 sc_within("red", 1:3)
 
