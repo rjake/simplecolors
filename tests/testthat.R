@@ -1,4 +1,4 @@
 library(testthat)
-library(colorbuildR)
+library(simplecolors)
 
-test_check("colorbuildR")
+test_check("simplecolors")
