@@ -32,7 +32,7 @@ sc <- function(color = "teal5") {
 #'
 #' @examples
 #'
-#' sc_within("teal", sat = unique(color_table$sat), return = "table") %>% show_palette()
+#' show_palette(color_table)
 #'
 show_palette <- function(df = color_table) {
   df %>%
