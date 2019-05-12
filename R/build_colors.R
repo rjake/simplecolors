@@ -8,7 +8,6 @@
 #' @importFrom grDevices col2rgb
 #'
 #' @return data.frame
-#' @export
 #'
 #'
 
@@ -97,7 +96,7 @@ build_colors <- function() {
 
 #' Show all available colors
 #'
-#' Based on the \code{\link{build_colors}} function
+#' Displays the \code{\link{color_table}} values
 #'
 #' @param display_type a string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.
 #'
@@ -163,4 +162,3 @@ show_colors <- function(display_type = "simplecolors") {
       subtitle = 'The default is a lightness of 3 and no modifier, ex. "red", "violet', "teal"
     )
 }
-
