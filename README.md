@@ -1,14 +1,20 @@
 # simplecolors
-1.  Come up with a cool name (that could always be changed later)
-2. Create a GH repo
-3. `usethis::create_package("packagename")`
-4. Push it to GH
-5. Start making issues for desired features
-6. Use a project + milestone for managing what will be in the first release, and what can be done later
+simplecolors is designed to use a uniformly named set of colors to generated hex codes. 
 
-R O Y L G A B I V M P
+## Install development version from GitHub
+```r
+devtools::install_github("rjake/simplecolors")
 
-![colors](https://github.com/rjake/simplecolors/blob/master/colors.png)
+```
+
+## Methods
+The idea is to have a simpler way of accessing color values that is easy to remember and intuitive. Colors can be called using `sc()` or by using the various palette tools `sc_across()`, `sc_blue()`. Each of the palettes. 
+
+The colors follow a pattern of [saturation] [color name] [lightness]
+
+More details can be found in  created can be found in `vignette("Intro", package = "simplecolors")`.
+
+![](images/color_names.png)
 
 
   <!-- badges: start -->
