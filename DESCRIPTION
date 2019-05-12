@@ -19,7 +19,7 @@ License: GNU General Public License | file LICENSE
 URL: https://github.com/rjake/simplecolors
 BugReports: https://github.com//rjake/simplecolors/issues
 Encoding: UTF-8
-LazyData: no
+LazyData: true
 Suggests: 
     testthat,
     covr,
