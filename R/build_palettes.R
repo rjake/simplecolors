@@ -7,19 +7,18 @@
 #' @importFrom stats setNames
 #'
 #' @examples
-#' sc(c("violet4", "brightcyan3"))
+#' sc(c("violet4", "brightteal3"))
 #'
-sc <- function(color = "grey3") {
+sc <- function(color = "teal5") {
   sc_names <-
     setNames(
-      simplecolors::color_table$hex,
-      simplecolors::color_table$color_name
+      color_table$hex,
+      color_table$color_name
     )
 
   unname(sc_names[color])
 
 }
-
 
 
 
@@ -33,7 +32,7 @@ sc <- function(color = "grey3") {
 #'
 #' @examples
 #'
-#' sc_pal_within("blue", sat = unique(color_table$sat), return = "table") %>% show_palette()
+#' sc_within("teal", sat = unique(color_table$sat), return = "table") %>% show_palette()
 #'
 show_palette <- function(df = color_table) {
   df %>%
@@ -48,6 +47,31 @@ show_palette <- function(df = color_table) {
     )
 }
 
+
+#' Helper function to print output
+#'
+#' @param df a dataframe built from color_table
+#' @param return defaults to returning hex codes but can also return a table or plot of the generated palette
+#'
+#'
+#' @importFrom dplyr select arrange pull
+#' @importFrom forcats fct_reorder
+
+specify_output <- function(df, return = NULL){
+  if (missing(return) | is.null(return)) {
+
+    df %>% pull(hex)
+
+  } else if (return == "table") {
+
+    df %>% select(color_name, hex)
+
+  } else if (return == "plot") {
+
+    df %>% show_palette()
+
+  }
+}
 
 
 
@@ -65,15 +89,15 @@ show_palette <- function(df = color_table) {
 #'
 #' @examples
 #'
-#' sc_pal_within("violet", 1:6, "bright" , return = "table")
-#' sc_pal_within("violet", 2:4, c("bright", "muted"), return = "plot")
-#' sc_pal_within("red", 1:3)
+#' sc_within("violet", 1:6, "bright" , return = "table")
+#' sc_within("violet", 2:4, c("bright", "muted"), return = "plot")
+#' sc_within("red", 1:3)
 #'
 #'
-sc_pal_within <- function(hue,
-                          light = c(2:6),
-                          sat = "",
-                          return = NULL) {
+sc_within <- function(hue,
+                      light = c(2:6),
+                      sat = "",
+                      return = NULL) {
 
 
   l_order <-
@@ -86,11 +110,11 @@ sc_pal_within <- function(hue,
     data.frame(
       sat = sat,
       s_ord = seq_along(sat)
-  )
+    )
 
   df <-
     suppressWarnings(
-      simplecolors::color_table %>%
+      color_table %>%
         filter(
           color %in% !! hue,
           light %in% !! light,
@@ -103,21 +127,10 @@ sc_pal_within <- function(hue,
     )
 
   #df <- df[which(df$L == !!L),]
+  specify_output(df, return)
 
-  if (missing(return)) {
-
-    df %>% pull(hex)
-
-  } else if (return == "table") {
-
-    df %>% select(color_name, hex)
-
-  } else if (return == "plot") {
-
-    df %>% show_palette()
-
-  }
 }
+
 
 
 
@@ -127,19 +140,26 @@ sc_pal_within <- function(hue,
 #
 
 make_color_function <- function(hue, light = 2:6, sat = "", ...) {
-        sc_pal_within(
-          hue = hue,
-          light = light,
-          sat = sat,
-          ...
-        )
+  sc_within(
+    hue = hue,
+    light = light,
+    sat = sat,
+    ...
+  )
 }
-
-pal_reds <- function(...) make_color_function("red", ...)
-pal_reds(light = 2, sat = "bright",return = "table")
-
-pal_blues <- function(...) make_color_function("blue", ...)
-pal_blues(sat = c("bright", "muted"), return = "plot")
+# sc_red <- function(...) make_color_function("red", ...)
+# sc_orange <- function(...) make_color_function("orange", ...)
+# sc_yellow <- function(...) make_color_function("yellow", ...)
+# sc_green <- function(...) make_color_function("green", ...)
+# sc_teal <- function(...) make_color_function("teal", ...)
+# sc_blue <- function(...) make_color_function("blue", ...)
+# sc_violet <- function(...) make_color_function("violet", ...)
+# sc_pink <- function(...) make_color_function("pink", ...)
+# sc_grey <- function(...) make_color_function("blue", ...)
+# sc_teal(1:3)
+# sc_teal(1:3, sat = "dull")
+# sc_teal(1:3, sat = "bright", return = "table")
+# sc_teal(1:3, sat = "muted", return = "plot")
 
 # make_color_functions <- function() {
 #
@@ -150,7 +170,7 @@ pal_blues(sat = c("bright", "muted"), return = "plot")
 #     assign(
 #       paste0("delete_", unique_colors[i]),
 #       function(light = 2:5, sat = "", ..., envir = current()) {
-#         sc_pal_within(
+#         sc_within(
 #           hue = unique_colors[i],
 #           light = light,
 #           sat = sat,
@@ -166,16 +186,6 @@ pal_blues(sat = c("bright", "muted"), return = "plot")
 #   }
 # }
 #make_color_functions()
-#delete_red()
-#rm(list = ls()[grepl("delete", ls())])
-#delete_blue()
-#delete_violet()
-
-
-
-
-
-
 
 #' Generates a palette within across hues
 #'
@@ -186,51 +196,56 @@ pal_blues(sat = c("bright", "muted"), return = "plot")
 #'
 #' @export
 #'
-#' @importFrom dplyr filter arrange pull select
-#' @importFrom stringr str_detect
+#' @importFrom dplyr filter left_join mutate
+#' @importFrom forcats fct_inorder
+#' @importFrom stringr str_detect str_extract_all
+#' @importFrom stats setNames
 #'
 #' @examples
-#' sc_pal_across()
-#' sc_pal_across(sat = "bright", return = "plot")
-#' sc_pal_across(sat = c("bright", "muted"), return = "plot")
-#' sc_pal_across(return = "plot")
+#' sc_across()
+#' sc_across(sat = "bright", return = "plot")
+#' sc_across(sat = c("bright", "muted"), return = "plot")
+#' sc_across(return = "plot")
 #'
-#' sc_pal_across(palette = "BO", sat = "bright", return = "plot")
-#' sc_pal_across(palette = "BO", sat = "bright", return = "table")
-#' sc_pal_across(palette = "RYCMG", light =  c(1,4), return = "plot")
+#' sc_across(palette = "BO", sat = "bright", return = "plot")
+#' sc_across(palette = "BO", sat = "bright", return = "table")
+#' sc_across(palette = "RYCMG", light =  c(1,4), return = "plot")
 #'
 
-sc_pal_across <- function(palette = "ROYLCBVMW",
-                          light = 3,
-                          sat = "bright",
-                          return = NULL) {
+sc_across <- function(palette = "ROYGTBVPGy",
+                      light = 3,
+                      sat = "",
+                      return = NULL) {
 
+  use_colors <- str_extract_all(palette, "[A-Z][y]?") %>% unlist()
 
-    df <-
-      simplecolors::color_table %>%
-      filter(
-        str_detect(letter, paste0("[", palette, "]")),
-        light %in% !! light,
-        sat %in% !! sat
+  filter_df <-
+    color_table %>%
+    filter(
+      light == !! light,
+      (sat == !! sat | (str_detect(palette, "Gy") & letter == "Gy"))
+    )
+
+  pal_names <-
+    setNames(
+      filter_df$hex,
+      filter_df$letter
+    )
+
+  df <-
+    suppressMessages(
+      data.frame(
+        hex = unname(pal_names[use_colors]),
+        stringsAsFactors = FALSE
       ) %>%
-      arrange(light)
+        left_join(filter_df) %>%
+        mutate(H360 = fct_inorder(factor(H360)))
+    )
 
-    #df <- df[which(df$L == !!L),]
+  specify_output(df, return)
 
-    if (missing(return)) {
-
-      df %>% pull(hex)
-
-    } else if (return == "table") {
-
-      df %>% select(color_name, hex)
-
-    } else if (return == "plot") {
-
-      df %>% show_palette()
-
-    }
 }
+
 
 
 
@@ -244,7 +259,7 @@ sc_pal_across <- function(palette = "ROYLCBVMW",
 #' show_hues()
 #'
 show_hues <- function(){
-  sc_pal_across(return = "plot") +
+  sc_across(return = "plot") +
     labs(x = "also grey", y = "") +
     theme(
       axis.ticks = element_blank(),
@@ -263,3 +278,6 @@ show_hues <- function(){
   #   ) +
   #  labs(x = "also grey", y = "")
 }
+
+
+
