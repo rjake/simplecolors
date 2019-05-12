@@ -40,7 +40,7 @@ build_colors <- function() {
         )
     ) %>%
   # add white & black
-  rbind(c(360, 0, 0, 7, 0)) %>%
+  rbind(c(360, 0, 0, 6, 0)) %>%
   rbind(c(360, 1, 0, 0, 0)) %>%
   mutate(
        color =
