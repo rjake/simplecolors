@@ -10,7 +10,6 @@
 #' @return data.frame
 #' @export
 #'
-#' @examples
 #'
 
 build_colors <- function() {
@@ -18,7 +17,7 @@ build_colors <- function() {
   hue_values <- # seq(0, 330, round(330 / 11, 0))
     c(0, 40, 60, 120, 180, 220, 270, 300)
 
-  l_values <- c(.2, .3, .45, .6, .75, .9)
+  l_values <- c(.15, .3, .58, .78, .92)
   s_values <- c(.25, .5, .75, 1)
 
     # all colors, 12 hues, 6 light, and 4 saturation values
@@ -50,14 +49,14 @@ build_colors <- function() {
            "0" = "red",
           "40" = "orange",
           "60" = "yellow",
-          "120" = "lime",
-          "180" = "cyan",
+          "120" = "green",
+          "180" = "teal",
           "220" = "blue",
           "270" = "violet",
-          "300" = "magenta",
+          "300" = "pink",
           "360" = "grey"
           ),
-       letter = toupper(substr(color, 1, 1)),
+       letter = ifelse(color == "grey", "Gy", toupper(substr(color, 1, 1))),
        sat =
         recode(S,
           "0" = "",
@@ -67,7 +66,7 @@ build_colors <- function() {
           "4" = "dull"
         ),
        sat = fct_reorder(sat, S, max),
-       color_sat = paste0(sat, color),
+       color_sat = paste0(sat, tolower(color)),
        color_name = paste0(color_sat, light)
     ) %>%
     # get hex & RGB codes
@@ -85,13 +84,15 @@ build_colors <- function() {
 
   #write.csv(color_values, "colors.csv", row.names = F)
 }
-
+#color_table <- build_colors()
+#usethis::use_data(color_table, overwrite = TRUE)
+#show_colors()
 
 #' Show all available colors
 #'
 #' Based on the \code{\link{build_colors}} function
 #'
-#' @param hue_max
+#' @param display_type a string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.
 #'
 #' @return ggplot
 #' @export
