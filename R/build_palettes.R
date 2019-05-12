@@ -78,7 +78,7 @@ specify_output <- function(df, return = NULL){
 #' Generates a palette within 1 hue
 #'
 #' @param hue ex: "red", "blue", "violet"
-#' @param light the lightness of the color, ex: 1:7, best at 2:6
+#' @param light the lightness of the color, ex: 1:5
 #' @param sat the saturation of the color, ex: "bright", "muted", "dull" or "" (base)
 #' @param return defaults to returning hex codes but can also return a table or plot of the generated palette
 #'
@@ -89,13 +89,13 @@ specify_output <- function(df, return = NULL){
 #'
 #' @examples
 #'
-#' sc_within("violet", 1:6, "bright" , return = "table")
+#' sc_within("violet", 1:5, "bright" , return = "table")
 #' sc_within("violet", 2:4, c("bright", "muted"), return = "plot")
 #' sc_within("red", 1:3)
 #'
 #'
 sc_within <- function(hue,
-                      light = c(2:6),
+                      light = c(2:5),
                       sat = "",
                       return = NULL) {
 
@@ -139,7 +139,7 @@ sc_within <- function(hue,
 #' @noRd
 #
 
-make_color_function <- function(hue, light = 2:6, sat = "", ...) {
+make_color_function <- function(hue, light = 2:5, sat = "", ...) {
   sc_within(
     hue = hue,
     light = light,
