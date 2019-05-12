@@ -9,14 +9,14 @@
 #' @examples
 #' sc(c("violet4", "brightteal3"))
 #'
-sc <- function(color = "teal5") {
+sc <- function(...) {
   sc_names <-
     setNames(
       color_table$hex,
       color_table$color_name
     )
 
-  unname(sc_names[color])
+  unname(sc_names[c(...)])
 
 }
 
@@ -25,8 +25,6 @@ sc <- function(color = "teal5") {
 #' Title
 #'
 #' @param df passing a data frame with `H360`, `color`, `letter`, `sat`, `light` and `hex`
-#'
-#' @export
 #'
 #' @importFrom ggplot2 ggplot aes facet_grid geom_tile scale_y_reverse scale_fill_identity labs
 #'
@@ -52,7 +50,6 @@ show_palette <- function(df = color_table) {
 #'
 #' @param df a dataframe built from color_table
 #' @param return defaults to returning hex codes but can also return a table or plot of the generated palette
-#'
 #'
 #' @importFrom dplyr select arrange pull
 #' @importFrom forcats fct_reorder
@@ -86,6 +83,9 @@ specify_output <- function(df, return = NULL){
 #'
 #' @importFrom dplyr filter left_join mutate select arrange pull
 #' @importFrom forcats fct_reorder
+#'
+#' @family pallete
+#' @seealso \code{\link{sc_across}}
 #'
 #' @examples
 #'
@@ -148,15 +148,15 @@ sc_within <- function(hue,
 #' @importFrom stringr str_detect str_extract_all
 #' @importFrom stats setNames
 #'
+#' @family pallete
+#' @seealso \code{\link{sc_within}}
+#'
 #' @examples
 #' sc_across()
-#' sc_across(sat = "bright", return = "plot")
-#' sc_across(sat = c("bright", "muted"), return = "plot")
-#' sc_across(return = "plot")
-#'
-#' sc_across(palette = "BO", sat = "bright", return = "plot")
 #' sc_across(palette = "BO", sat = "bright", return = "table")
-#' sc_across(palette = "RYCMG", light =  c(1,4), return = "plot")
+#' sc_across(sat = "bright", return = "plot")
+#' sc_across(sat = "dull", return = "plot")
+#' sc_across(palette = "RBTVPGy", light = 4, return = "plot")
 #'
 
 sc_across <- function(palette = "ROYGTBVPGy",
@@ -192,39 +192,3 @@ sc_across <- function(palette = "ROYGTBVPGy",
   specify_output(df, return)
 
 }
-
-
-
-
-#' shows the base hues for reference
-#'
-#' @export
-#'
-#' @importFrom ggplot2 labs theme element_blank
-#'
-#' @examples
-#' show_hues()
-#'
-show_hues <- function(){
-  sc_across(return = "plot") +
-    labs(x = "also grey", y = "") +
-    theme(
-      axis.ticks = element_blank(),
-      axis.text = element_blank()
-    )
-
-  # color_table %>%
-  #   filter(S1 == 1, L1 == 0.45) %>%
-  #   ggplot(aes("", "", fill = hex)) +
-  #   geom_tile() +
-  #   scale_fill_identity() +
-  #   facet_grid(H360 + color  ~ .) +
-  #   theme(
-  #     strip.text.y = element_text(angle = 0),
-  #     axis.ticks = element_blank()
-  #   ) +
-  #  labs(x = "also grey", y = "")
-}
-
-
-
