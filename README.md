@@ -1,4 +1,4 @@
-# colorbuildr
+# simplecolors
 1.  Come up with a cool name (that could always be changed later)
 2. Create a GH repo
 3. `usethis::create_package("packagename")`
@@ -8,10 +8,10 @@
 
 R O Y L G A B I V M P
 
-![colors](https://github.com/rjake/colorbuildR/blob/master/colors.png)
+![colors](https://github.com/rjake/simplecolors/blob/master/colors.png)
 
 
   <!-- badges: start -->
-  [![Codecov test coverage](https://codecov.io/gh/rjake/colorbuildR/branch/master/graph/badge.svg)](https://codecov.io/gh/rjake/colorbuildR?branch=master)
+  [![Codecov test coverage](https://codecov.io/gh/rjake/simplecolors/branch/master/graph/badge.svg)](https://codecov.io/gh/rjake/simplecolors?branch=master)
   <!-- badges: end -->
   
