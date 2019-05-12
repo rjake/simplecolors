@@ -20,7 +20,7 @@ build_colors <- function() {
   l_values <- c(.15, .3, .58, .78, .92)
   s_values <- c(.25, .5, .75, 1)
 
-    # all colors, 12 hues, 6 light, and 4 saturation values
+  # all colors, 12 hues, 6 light, and 4 saturation values
   expand.grid(
     H360 = hue_values,
     L1 = l_values,
@@ -80,7 +80,10 @@ build_colors <- function() {
       H255 = round(H1 * 255, ifelse(color == "grey", 0, -1))
     ) %>%
     ungroup() %>%
-    select(-S)
+    select(-S) %>%
+    rbind(
+      filter(., sat == "", light == 3)
+    )
 
   #write.csv(color_values, "colors.csv", row.names = F)
 }
