@@ -1,10 +1,10 @@
 ---
-title: "Intro"
+title: ""
 output: 
   rmarkdown::html_vignette:
     df_print: kable
 vignette: >
-  %\VignetteIndexEntry{Intro}
+  %\VignetteIndexEntry{Introduction to simplecolors}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
