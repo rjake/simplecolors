@@ -105,7 +105,7 @@ build_colors <- function() {
 #' @export
 #' @importFrom dplyr mutate
 #' @importFrom forcats fct_rev
-#' @importFrom ggplot2 ggplot aes facet_wrap geom_tile scale_fill_identity labs
+#' @importFrom ggplot2 ggplot aes facet_wrap geom_tile scale_fill_identity labs element_rect
 #'
 #' @examples
 #'
@@ -118,6 +118,7 @@ show_colors <- function(display_type = "simplecolors") {
 
   df <-
     color_table %>%
+    filter(!is.na(light)) %>%
     mutate(
       use_h = H360,
       use_l = L1,
@@ -151,12 +152,15 @@ show_colors <- function(display_type = "simplecolors") {
   df %>%
     ggplot() +
     facet_wrap(~use_h + paste0(color, " (", letter, ")"), nrow = 2) +
-    geom_tile(aes(x = factor(use_s), y = factor(use_l), fill = hex), color = "white") +
+    geom_tile(aes(x = factor(use_s), y = factor(use_l), fill = hex), color = "grey90") +
+    geom_tile(aes(x = factor(""), y = factor(3)), fill = NA, color = "white", size = 1) +
     scale_fill_identity() +
+    theme(panel.background = element_rect(fill = "white", color = "grey90")) +
     labs(
       x = "Saturation",
       y = "Light",
-      title = paste("Hue referencing", display_type)
+      title = paste("Hue referencing", display_type),
+      subtitle = 'The default is a lightness of 3 and no modifier, ex. "red", "violet', "teal"
     )
 }
 
