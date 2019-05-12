@@ -19,80 +19,81 @@ build_colors <- function() {
   l_values <- c(.15, .3, .58, .78, .92)
   s_values <- c(.25, .5, .75, 1)
 
-  # all colors, 12 hues, 6 light, and 4 saturation values
-  expand.grid(
-    H360 = hue_values,
-    L1 = l_values,
-    S1 = s_values
-  ) %>%
-    # add grey scale
-    rbind(expand.grid(
-      H360 = 360,
+  base_df <-
+    # all colors, 12 hues, 6 light, and 4 saturation values
+    expand.grid(
+      H360 = hue_values,
       L1 = l_values,
-      S1 = 0
-    )) %>%
-    mutate(
-      light = as.integer(factor(L1, levels = rev(l_values))),
-      S =
-        ifelse(
-          H360 == 360, 0, as.integer(factor(S1, levels = rev(s_values)))
-        )
+      S1 = s_values
     ) %>%
-    # add white & black
-    rbind(c(360, 0, 0, 6, 0)) %>%
-    rbind(c(360, 1, 0, 0, 0)) %>%
-    mutate(
-      color =
-        recode(
-          H360,
-          "0" = "red",
-          "40" = "orange",
-          "60" = "yellow",
-          "120" = "green",
-          "180" = "teal",
-          "220" = "blue",
-          "270" = "violet",
-          "300" = "pink",
-          "360" = "grey"
-        ),
-      letter = ifelse(color == "grey", "Gy", toupper(substr(color, 1, 1))),
-      sat =
-        recode(S,
-               "0" = "",
-               "1" = "bright",
-               "2" = "",
-               "3" = "muted",
-               "4" = "dull"
-        ),
-      sat = fct_reorder(sat, S, max),
-      color_sat = paste0(sat, tolower(color)),
-      color_name = paste0(color_sat, light)
-    ) %>%
-    # get hex & RGB codes
-    rowwise() %>%
-    mutate(
-      H1 = round(H360 / 360, 2),
-      hex = hex(HLS(H360, L1, S1)),
-      R = col2rgb(hex)[1],
-      G = col2rgb(hex)[2],
-      B = col2rgb(hex)[3],
-      H255 = round(H1 * 255, ifelse(color == "grey", 0, -1))
-    ) %>%
-    ungroup() %>%
-    select(-S) %>%
-    rbind(
-      filter(., sat == "", light == 3) %>%
-        mutate(
-          color_name = gsub("3", "", color_name),
-          light = NA_integer_
-        )
-    )
+      # add grey scale
+      rbind(expand.grid(
+        H360 = 360,
+        L1 = l_values,
+        S1 = 0
+      )) %>%
+      mutate(
+        light = as.integer(factor(L1, levels = rev(l_values))),
+        S =
+          ifelse(
+            H360 == 360, 0, as.integer(factor(S1, levels = rev(s_values)))
+          )
+      ) %>%
+      # add white & black
+      rbind(c(360, 0, 0, 6, 0)) %>%
+      rbind(c(360, 1, 0, 0, 0)) %>%
+      mutate(
+        color =
+          recode(
+            H360,
+            "0" = "red",
+            "40" = "orange",
+            "60" = "yellow",
+            "120" = "green",
+            "180" = "teal",
+            "220" = "blue",
+            "270" = "violet",
+            "300" = "pink",
+            "360" = "grey"
+          ),
+        letter = ifelse(color == "grey", "Gy", toupper(substr(color, 1, 1))),
+        sat =
+          recode(S,
+                 "0" = "",
+                 "1" = "bright",
+                 "2" = "",
+                 "3" = "muted",
+                 "4" = "dull"
+          ),
+        sat = fct_reorder(sat, S, max),
+        color_sat = paste0(sat, tolower(color)),
+        color_name = paste0(color_sat, light)
+      ) %>%
+      # get hex & RGB codes
+      rowwise() %>%
+      mutate(
+        H1 = round(H360 / 360, 2),
+        hex = hex(HLS(H360, L1, S1)),
+        R = col2rgb(hex)[1],
+        G = col2rgb(hex)[2],
+        B = col2rgb(hex)[3],
+        H255 = round(H1 * 255, ifelse(color == "grey", 0, -1))
+      ) %>%
+      ungroup() %>%
+      select(-S)
 
-  #write.csv(color_values, "colors.csv", row.names = F)
+  # final output, add in colors without modifiers (ex: "red3" -> "red")
+  base_df %>%
+  rbind(
+    base_df %>%
+    filter(sat == "", light == 3) %>%
+    mutate(
+      color_name = gsub("3", "", color_name),
+      light = NA_integer_
+    )
+  )
+
 }
-#color_table <- build_colors()
-#usethis::use_data(color_table, overwrite = TRUE)
-#show_colors()
 
 #' Show all available colors
 #'
@@ -105,7 +106,7 @@ build_colors <- function() {
 #'
 #' @importFrom dplyr mutate
 #' @importFrom forcats fct_rev
-#' @importFrom ggplot2 ggplot aes facet_wrap geom_tile scale_fill_identity labs theme element_rect
+#' @importFrom ggplot2 ggplot aes facet_wrap geom_tile geom_label scale_fill_identity labs theme element_rect
 #'
 #' @examples
 #'
