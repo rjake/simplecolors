@@ -82,7 +82,11 @@ build_colors <- function() {
     ungroup() %>%
     select(-S) %>%
     rbind(
-      filter(., sat == "", light == 3)
+      filter(., sat == "", light == 3) %>%
+        mutate(
+          color_name = gsub("3", "", color_name),
+          light = NA_integer_
+        )
     )
 
   #write.csv(color_values, "colors.csv", row.names = F)
