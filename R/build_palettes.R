@@ -134,59 +134,6 @@ sc_within <- function(hue,
 
 
 
-#' Title
-#'
-#' @noRd
-#
-
-make_color_function <- function(hue, light = 2:5, sat = "", ...) {
-  sc_within(
-    hue = hue,
-    light = light,
-    sat = sat,
-    ...
-  )
-}
-# sc_red <- function(...) make_color_function("red", ...)
-# sc_orange <- function(...) make_color_function("orange", ...)
-# sc_yellow <- function(...) make_color_function("yellow", ...)
-# sc_green <- function(...) make_color_function("green", ...)
-# sc_teal <- function(...) make_color_function("teal", ...)
-# sc_blue <- function(...) make_color_function("blue", ...)
-# sc_violet <- function(...) make_color_function("violet", ...)
-# sc_pink <- function(...) make_color_function("pink", ...)
-# sc_grey <- function(...) make_color_function("blue", ...)
-# sc_teal(1:3)
-# sc_teal(1:3, sat = "dull")
-# sc_teal(1:3, sat = "bright", return = "table")
-# sc_teal(1:3, sat = "muted", return = "plot")
-
-# make_color_functions <- function() {
-#
-#   unique_colors <- unique(color_table$color)
-#
-#   for (i in seq_along(unique_colors)) {
-#
-#     assign(
-#       paste0("delete_", unique_colors[i]),
-#       function(light = 2:5, sat = "", ..., envir = current()) {
-#         sc_within(
-#           hue = unique_colors[i],
-#           light = light,
-#           sat = sat,
-#           ...
-#         )
-#       },
-#       inherits = T,
-#       envir = sys.frame()
-#     )
-#
-#     print(i)
-#     print(unique_colors[i])
-#   }
-# }
-#make_color_functions()
-
 #' Generates a palette within across hues
 #'
 #' @param palette the first letter of each hue to include
