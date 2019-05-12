@@ -15,23 +15,23 @@
 \usage{
 sc_within(hue, light = c(2:5), sat = "", return = NULL)
 
-sc_red(...)
+sc_red(light = 2:5, sat = "", ...)
 
-sc_orange(...)
+sc_orange(light = 2:5, sat = "", ...)
 
-sc_yellow(...)
+sc_yellow(light = 2:5, sat = "", ...)
 
-sc_green(...)
+sc_green(light = 2:5, sat = "", ...)
 
-sc_teal(...)
+sc_teal(light = 2:5, sat = "", ...)
 
-sc_blue(...)
+sc_blue(light = 2:5, sat = "", ...)
 
-sc_violet(...)
+sc_violet(light = 2:5, sat = "", ...)
 
-sc_pink(...)
+sc_pink(light = 2:5, sat = "", ...)
 
-sc_grey(...)
+sc_grey(light = 2:5, sat = "", ...)
 }
 \arguments{
 \item{hue}{ex: "red", "blue", "violet"}
@@ -74,6 +74,6 @@ sc_within("red", 1:3)
 \seealso{
 \code{\link{sc_across}}
 
-Other pallete: \code{\link{sc_across}}
+Other palette: \code{\link{sc_across}}
 }
-\concept{pallete}
+\concept{palette}

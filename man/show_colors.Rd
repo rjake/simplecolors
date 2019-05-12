@@ -4,10 +4,12 @@
 \alias{show_colors}
 \title{Show all available colors}
 \usage{
-show_colors(display_type = "simplecolors")
+show_colors(display_type = "simplecolors", labels = TRUE)
 }
 \arguments{
-\item{display_type}{a string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.}
+\item{display_type}{string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.}
+
+\item{labels}{logical TRUE (default) will plot the color with color names, FALSE will plot the colors only}
 }
 \value{
 ggplot

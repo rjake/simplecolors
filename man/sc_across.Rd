@@ -30,6 +30,6 @@ sc_across(palette = "RBTVPGy", light = 4, return = "plot")
 \seealso{
 \code{\link{sc_within}}
 
-Other pallete: \code{\link{sc_within}}
+Other palette: \code{\link{sc_within}}
 }
-\concept{pallete}
+\concept{palette}

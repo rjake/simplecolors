@@ -4,7 +4,7 @@
 \name{simplecolors-package}
 \alias{simplecolors}
 \alias{simplecolors-package}
-\title{simplecolors: A simplified method for selecting colors and color
+\title{simplecolors: A simplified method for selecting colors and
     color palettes}
 \description{
 Using the HLS colorspace model, colors and color
