@@ -35,3 +35,4 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 R/build_palettes.R
+inst/doc
