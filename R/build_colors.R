@@ -98,8 +98,8 @@ build_colors <- function() {
 #'
 #' Plots the \code{\link{color_table}} values. The hue reference range can be adjusted for consistency across different tools.
 #'
-#' @param display_type a string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.
-#'
+#' @param display_type string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.
+#' @param labels logical TRUE (default) will plot the color with color names, FALSE will plot the colors only
 #' @return ggplot
 #' @export
 #'
@@ -114,7 +114,7 @@ build_colors <- function() {
 #' show_colors(display_type = "255")
 #' show_colors(display_type = "260")
 
-show_colors <- function(display_type = "simplecolors") {
+show_colors <- function(display_type = "simplecolors", labels = TRUE) {
 
   df <-
     color_table %>%
@@ -149,17 +149,30 @@ show_colors <- function(display_type = "simplecolors") {
   }
 
   #vignette("spc", "rocqi")
-  df %>%
-    ggplot() +
-    facet_wrap(~use_h + paste0(color, " (", letter, ")"), nrow = 2) +
-    geom_tile(aes(x = factor(use_s), y = factor(use_l), fill = hex), color = "grey90") +
-    geom_tile(aes(x = factor(""), y = factor(3)), fill = NA, color = "white", size = 1) +
+  p <-
+    ggplot(df, aes(x = factor(sat), y = factor(light) %>% fct_rev())) +
+    facet_wrap(~use_h + paste0(color, " (", letter, ")"), nrow = 3, scales = "free_y") +
+    geom_tile(aes(fill = hex), color = "grey90") +
+    geom_tile(aes(x = factor(""), y = factor(3)), fill = NA, color = "white", size = 1.5) +
     scale_fill_identity() +
     theme(panel.background = element_rect(fill = "white", color = "grey90")) +
     labs(
       x = "Saturation",
       y = "Light",
       title = paste("Hue referencing", display_type),
-      subtitle = 'The default is a lightness of 3 and no modifier, ex. "red", "violet', "teal"
+      subtitle = 'The default is a lightness of 3 and can be specified by color name alone, ex. "red", "violet', "teal"
     )
+
+  if (labels) {
+    p <-
+      p +
+      geom_label(
+        data = df,
+        aes(x = factor(sat), y = factor(light) %>% fct_rev(), label = color_name),
+        label.size = 0, alpha = 0.8
+      )
+  }
+
+  p
+
 }
