@@ -14,8 +14,11 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+```
 
-library(tidyverse)
+```{r, echo = FALSE}
+library(dplyr)
+library(ggplot2)
 library(simplecolors)
 ```
 
@@ -47,12 +50,12 @@ For example, the following code will return the corresponding hex values
 # The `sc()` function
 This function stands for **s**imple**c**olors. You can specify base colors
 ```{r}
-sc(c("red", "violet", "pink"))
+sc("red", "violet", "pink")
 ```
 
 or add modifiers
 ```{r}
-sc(c("brightblue4", "mutedorange5", "grey3"))
+sc("brightblue4", "mutedorange5", "grey3")
 ```
 
 # Palettes
