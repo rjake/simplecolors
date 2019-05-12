@@ -14,11 +14,12 @@ Description: Using the HLS colorspace model, colors and color
     constant and varying the lightness. Similarly, you can build a nice
     color palette across hues by holding the light and saturation values
     constant and varying the hue.
-License: GNU General Public License
-URL: https://github.com/rjake/colorbuildr
+Depends: R (>= 3.1.0)
+License: GNU General Public License | file LICENSE
+URL: https://github.com/rjake/simplecolors
 BugReports: https://github.com//rjake/simplecolors/issues
 Encoding: UTF-8
-LazyData: true
+LazyData: no
 Suggests: 
     testthat,
     covr,
@@ -26,8 +27,10 @@ Suggests:
 Language: en-US
 RoxygenNote: 6.1.1
 Imports: 
-    magrittr,
+    colorspace,
     dplyr,
     forcats,
+    ggplot2,
+    magrittr,
     stats,
     stringr
