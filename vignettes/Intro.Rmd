@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Introduction to simplecolors"
 output: 
   rmarkdown::html_vignette:
     df_print: kable
