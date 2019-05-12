@@ -110,7 +110,7 @@ color_table %>%
 ```
 
 ## `sc_red()`, `sc_blue()`, etc...
-There is also a `sc_within()` pallete defaulted for each color
+There is also a `sc_within()` palette defaulted for each color
 ```{r}
 sc_red(1:4, "bright")
 ```

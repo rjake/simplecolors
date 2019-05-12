@@ -85,7 +85,7 @@ specify_output <- function(df, return = NULL){
 #' @importFrom dplyr filter left_join mutate select arrange pull
 #' @importFrom forcats fct_reorder
 #'
-#' @family pallete
+#' @family palette
 #' @seealso \code{\link{sc_across}}
 #'
 #' @examples
@@ -149,7 +149,7 @@ sc_within <- function(hue,
 #' @importFrom stringr str_detect str_extract_all
 #' @importFrom stats setNames
 #'
-#' @family pallete
+#' @family palette
 #' @seealso \code{\link{sc_within}}
 #'
 #' @examples
