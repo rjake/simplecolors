@@ -13,7 +13,7 @@ show_colors(display_type = "simplecolors")
 ggplot
 }
 \description{
-Based on the \code{\link{build_colors}} function
+Plots the \code{\link{color_table}} values. The hue reference range can be adjusted for consistency across different tools.
 }
 \examples{
 

@@ -4,15 +4,15 @@
 \alias{sc}
 \title{simplecolors color names}
 \usage{
-sc(color = "teal5")
+sc(...)
 }
 \arguments{
-\item{color}{the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"}
+\item{...}{the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"}
 }
 \description{
 simplecolors color names
 }
 \examples{
-sc(c("violet4", "brightteal3"))
+sc("violet4", "brightteal3")
 
 }
