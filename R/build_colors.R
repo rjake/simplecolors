@@ -39,14 +39,14 @@ build_colors <- function() {
           H360 == 360, 0, as.integer(factor(S1, levels = rev(s_values)))
         )
     ) %>%
-  # add white & black
-  rbind(c(360, 0, 0, 6, 0)) %>%
-  rbind(c(360, 1, 0, 0, 0)) %>%
-  mutate(
-       color =
-         recode(
-           H360,
-           "0" = "red",
+    # add white & black
+    rbind(c(360, 0, 0, 6, 0)) %>%
+    rbind(c(360, 1, 0, 0, 0)) %>%
+    mutate(
+      color =
+        recode(
+          H360,
+          "0" = "red",
           "40" = "orange",
           "60" = "yellow",
           "120" = "green",
@@ -55,19 +55,19 @@ build_colors <- function() {
           "270" = "violet",
           "300" = "pink",
           "360" = "grey"
-          ),
-       letter = ifelse(color == "grey", "Gy", toupper(substr(color, 1, 1))),
-       sat =
-        recode(S,
-          "0" = "",
-          "1" = "bright",
-          "2" = "",
-          "3" = "muted",
-          "4" = "dull"
         ),
-       sat = fct_reorder(sat, S, max),
-       color_sat = paste0(sat, tolower(color)),
-       color_name = paste0(color_sat, light)
+      letter = ifelse(color == "grey", "Gy", toupper(substr(color, 1, 1))),
+      sat =
+        recode(S,
+               "0" = "",
+               "1" = "bright",
+               "2" = "",
+               "3" = "muted",
+               "4" = "dull"
+        ),
+      sat = fct_reorder(sat, S, max),
+      color_sat = paste0(sat, tolower(color)),
+      color_name = paste0(color_sat, light)
     ) %>%
     # get hex & RGB codes
     rowwise() %>%
