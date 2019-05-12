@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">simplecolors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
       </span>
     </div>
 
@@ -86,7 +86,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Intro.html"></a>
+      <a href="../articles/Intro.html">Introduction to simplecolors</a>
     </li>
   </ul>
 </li>
@@ -122,14 +122,18 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>show_colors</span>(<span class='kw'>display_type</span> <span class='kw'>=</span> <span class='st'>"simplecolors"</span>)</pre>
+    <pre class="usage"><span class='fu'>show_colors</span>(<span class='kw'>display_type</span> <span class='kw'>=</span> <span class='st'>"simplecolors"</span>, <span class='kw'>labels</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>display_type</th>
-      <td><p>a string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.</p></td>
+      <td><p>string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.</p></td>
+    </tr>
+    <tr>
+      <th>labels</th>
+      <td><p>logical TRUE (default) will plot the color with color names, FALSE will plot the colors only</p></td>
     </tr>
     </table>
     
