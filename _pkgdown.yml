@@ -5,10 +5,12 @@ template:
 navbar:
   title: "simplecolors"
   left:
-    - text: "Vignettes"
-      href: articles/index.html
     - text: "Functions"
       href: reference/index.html
+    - text: "Vignettes"
+      menu:
+      - text: Introduction to simplecolors
+        href: articles/intro.html
     - text: "News"
       href: news/index.html
   right:
