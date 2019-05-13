@@ -1,0 +1,48 @@
+template:
+  params:
+    bootswatch: minimal
+
+navbar:
+  title: "simplecolors"
+  left:
+    - text: "Vignettes"
+      href: articles/index.html
+    - text: "Functions"
+      href: reference/index.html
+    - text: "News"
+      href: news/index.html
+  right:
+   - icon: fa-twitter
+     href: https://twitter.com/yake_84
+   - icon: fa-github
+     href: https://github.com/rjake/simplecolors
+
+
+articles:
+  - title: "Getting Started"
+    desc: >
+      This vignette provides an introduction to using functions in the simplecolors package.
+    contents:
+      - intro
+
+reference:
+  - title: "Single colors"
+    desc: >
+      Will return a single color
+    contents:
+      - sc
+  - title: "Palettes"
+    desc: >
+      Palettes for creating a series of colors across or within hues
+    contents:
+      - starts_with("sc_")
+  - title: "Reference Plot"
+    desc: >
+      Quickly view the colors available
+    contents:
+      - show_colors
+  - title: "Data"
+    desc: >
+      This table sits underneath each of the functions
+    contents:
+      - color_table
