@@ -1,5 +1,5 @@
 # simplecolors
-simplecolors is designed to use a uniformly named set of colors to generated hex codes. 
+simplecolors is designed to access color hex codes useing uniformly named colors. 
 
 ## Install development version from GitHub
 ```r
