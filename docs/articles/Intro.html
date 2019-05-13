@@ -37,31 +37,34 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../reference/index.html">Functions</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
+    Vignettes
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/Intro.html">Introduction to simplecolors</a>
+      <a href="../articles/intro.html">Introduction to simplecolors</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../news/index.html">News</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
+  <a href="https://twitter.com/yake_84">
+    <span class="fa fa-twitter"></span>
+     
+  </a>
+</li>
+<li>
   <a href="https://github.com/rjake/simplecolors">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -80,8 +83,8 @@
       <h1>Introduction to simplecolors</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/rjake/simplecolors/blob/master/vignettes/Intro.Rmd"><code>vignettes/Intro.Rmd</code></a></small>
-      <div class="hidden name"><code>Intro.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/rjake/simplecolors/blob/master/vignettes/intro.Rmd"><code>vignettes/intro.Rmd</code></a></small>
+      <div class="hidden name"><code>intro.Rmd</code></div>
 
     </div>
 
@@ -199,7 +202,7 @@
 <span class="co">#&gt; 3 blue4      #133986</span>
 <span class="co">#&gt; 4 blue5      #0A1D43</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"blue"</span>, <span class="dt">return =</span> <span class="st">"plot"</span>)</code></pre></div>
-<p><img src="Intro_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
 </div>
 <div id="using-sc_across" class="section level4">
 <h4 class="hasAnchor">
@@ -213,7 +216,7 @@
 <span class="co">#&gt; 2    orange3 #E4AF44</span>
 <span class="co">#&gt; 3    yellow3 #E4E444</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_across.html">sc_across</a></span>(<span class="dt">palette =</span> <span class="st">"ROY"</span>, <span class="dt">light =</span> <span class="dv">3</span>, <span class="dt">sat =</span> <span class="st">"bright"</span>, <span class="dt">return =</span> <span class="st">"plot"</span>)</code></pre></div>
-<p><img src="Intro_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
 <p>Here is a list of all colors abbreviations you can use in the palette</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">color_table <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">distinct</span>(color, letter)
@@ -246,7 +249,7 @@
 <span class="co">#&gt; 3 blue3      #4479E4</span>
 <span class="co">#&gt; 4 blue2      #9DB9F1</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_pink</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>), <span class="dt">sat =</span> <span class="st">"dull"</span>, <span class="dt">return =</span> <span class="st">"plot"</span>)</code></pre></div>
-<p><img src="Intro_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
 <p>And here’s an example where you might use it in a ggplot</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">blue_and_red &lt;-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(
   <span class="kw"><a href="../reference/sc_within.html">sc_blue</a></span>(<span class="dv">4</span><span class="op">:</span><span class="dv">2</span>, <span class="st">"bright"</span>), 
@@ -260,7 +263,7 @@ iris <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="co">#setting your custom gradients</span>
 <span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> blue_and_red) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre></div>
-<p><img src="Intro_files/figure-html/unnamed-chunk-16-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-16-1.png" width="700"></p>
 </div>
 </div>
   </div>

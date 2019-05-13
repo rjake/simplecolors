@@ -30,17 +30,17 @@ articles:
 reference:
   - title: "Single colors"
     desc: >
-      Will return a single color
+      Return a vector of hex codes
     contents:
       - sc
   - title: "Palettes"
     desc: >
-      Palettes for creating a series of colors across or within hues
+      Create a palette of colors across or within hues
     contents:
       - starts_with("sc_")
   - title: "Reference Plot"
     desc: >
-      Quickly view the colors available
+      View the colors available
     contents:
       - show_colors
   - title: "Data"
