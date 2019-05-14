@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Introduction to simplecolors • simplecolors</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to simplecolors">
@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="container template-article">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -30,18 +30,24 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">simplecolors</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9002</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../reference/index.html">Functions</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Vignettes
+    Articles
      
     <span class="caret"></span>
   </a>
@@ -52,19 +58,13 @@
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://twitter.com/yake_84">
-    <span class="fa fa-twitter"></span>
-     
-  </a>
-</li>
-<li>
   <a href="https://github.com/rjake/simplecolors">
-    <span class="fa fa-github"></span>
+    <span class="fa fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -90,16 +90,6 @@
 
     
     
-<pre><code>#&gt; Warning: package 'dplyr' was built under R version 3.5.3
-#&gt; 
-#&gt; Attaching package: 'dplyr'
-#&gt; The following objects are masked from 'package:stats':
-#&gt; 
-#&gt;     filter, lag
-#&gt; The following objects are masked from 'package:base':
-#&gt; 
-#&gt;     intersect, setdiff, setequal, union
-#&gt; Warning: package 'ggplot2' was built under R version 3.5.3</code></pre>
 <div id="rationale" class="section level1">
 <h1 class="hasAnchor">
 <a href="#rationale" class="anchor"></a>Rationale</h1>
@@ -161,11 +151,11 @@
 <h1 class="hasAnchor">
 <a href="#the-sc-function" class="anchor"></a>The <code><a href="../reference/sc.html">sc()</a></code> function</h1>
 <p>This function stands for <strong>s</strong>imple<strong>c</strong>olors. You can specify base colors</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc.html">sc</a></span>(<span class="st">"red"</span>, <span class="st">"violet"</span>, <span class="st">"pink"</span>)
-<span class="co">#&gt; [1] "#E44444" "#9444E4" "#E444E4"</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc.html">sc</a></span>(<span class="st">"red"</span>, <span class="st">"violet"</span>, <span class="st">"pink"</span>)</code></pre></div>
+<pre><code>#&gt; [1] "#E44444" "#9444E4" "#E444E4"</code></pre>
 <p>or add modifiers</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc.html">sc</a></span>(<span class="st">"brightblue4"</span>, <span class="st">"mutedorange5"</span>, <span class="st">"grey3"</span>)
-<span class="co">#&gt; [1] "#003399" "#392D13" "#949494"</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc.html">sc</a></span>(<span class="st">"brightblue4"</span>, <span class="st">"mutedorange5"</span>, <span class="st">"grey3"</span>)</code></pre></div>
+<pre><code>#&gt; [1] "#003399" "#392D13" "#949494"</code></pre>
 </div>
 <div id="palettes" class="section level1">
 <h1 class="hasAnchor">
@@ -179,10 +169,10 @@
 <li>
 <code>sc_[color]()</code> like sc_red()</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"teal"</span>, <span class="dt">light =</span> <span class="dv">3</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">sat =</span> <span class="st">"bright"</span>)
-<span class="co">#&gt; [1] "#29FFFF" "#009999" "#004D4D"</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_across.html">sc_across</a></span>(<span class="dt">palette =</span> <span class="st">"OTVGy"</span>, <span class="dt">light =</span> <span class="dv">4</span>, <span class="dt">sat =</span> <span class="st">"muted"</span>)
-<span class="co">#&gt; [1] "#735926" "#267373" "#4D2673" "#4D4D4D"</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"teal"</span>, <span class="dt">light =</span> <span class="dv">3</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">sat =</span> <span class="st">"bright"</span>)</code></pre></div>
+<pre><code>#&gt; [1] "#29FFFF" "#009999" "#004D4D"</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_across.html">sc_across</a></span>(<span class="dt">palette =</span> <span class="st">"OTVGy"</span>, <span class="dt">light =</span> <span class="dv">4</span>, <span class="dt">sat =</span> <span class="st">"muted"</span>)</code></pre></div>
+<pre><code>#&gt; [1] "#735926" "#267373" "#4D2673" "#4D4D4D"</code></pre>
 <div id="types-of-outputs" class="section level2">
 <h2 class="hasAnchor">
 <a href="#types-of-outputs" class="anchor"></a>Types of outputs</h2>
@@ -191,16 +181,16 @@
 <h4 class="hasAnchor">
 <a href="#using-sc_within" class="anchor"></a>Using <code><a href="../reference/sc_within.html">sc_within()</a></code>
 </h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"blue"</span>, <span class="dt">light =</span> <span class="dv">2</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">sat =</span> <span class="st">""</span>) <span class="co">#defaults</span>
-<span class="co">#&gt; [1] "#9DB9F1" "#4479E4" "#133986" "#0A1D43"</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"blue"</span>, <span class="dt">return =</span> <span class="st">"table"</span>)
-<span class="co">#&gt; # A tibble: 4 x 2</span>
-<span class="co">#&gt;   color_name hex    </span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;  </span>
-<span class="co">#&gt; 1 blue2      #9DB9F1</span>
-<span class="co">#&gt; 2 blue3      #4479E4</span>
-<span class="co">#&gt; 3 blue4      #133986</span>
-<span class="co">#&gt; 4 blue5      #0A1D43</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"blue"</span>, <span class="dt">light =</span> <span class="dv">2</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">sat =</span> <span class="st">""</span>) <span class="co">#defaults</span></code></pre></div>
+<pre><code>#&gt; [1] "#9DB9F1" "#4479E4" "#133986" "#0A1D43"</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"blue"</span>, <span class="dt">return =</span> <span class="st">"table"</span>)</code></pre></div>
+<pre><code>#&gt; # A tibble: 4 x 2
+#&gt;   color_name hex    
+#&gt;   &lt;chr&gt;      &lt;chr&gt;  
+#&gt; 1 blue2      #9DB9F1
+#&gt; 2 blue3      #4479E4
+#&gt; 3 blue4      #133986
+#&gt; 4 blue5      #0A1D43</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"blue"</span>, <span class="dt">return =</span> <span class="st">"plot"</span>)</code></pre></div>
 <p><img src="intro_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
 </div>
@@ -208,46 +198,46 @@
 <h4 class="hasAnchor">
 <a href="#using-sc_across" class="anchor"></a>Using <code><a href="../reference/sc_across.html">sc_across()</a></code>
 </h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_across.html">sc_across</a></span>(<span class="dt">palette =</span> <span class="st">"ROY"</span>, <span class="dt">light =</span> <span class="dv">3</span>)
-<span class="co">#&gt; [1] "#E44444" "#E4AF44" "#E4E444"</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_across.html">sc_across</a></span>(<span class="dt">palette =</span> <span class="st">"ROY"</span>, <span class="dt">light =</span> <span class="dv">3</span>, <span class="dt">return =</span> <span class="st">"table"</span>)
-<span class="co">#&gt;   color_name     hex</span>
-<span class="co">#&gt; 1       red3 #E44444</span>
-<span class="co">#&gt; 2    orange3 #E4AF44</span>
-<span class="co">#&gt; 3    yellow3 #E4E444</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_across.html">sc_across</a></span>(<span class="dt">palette =</span> <span class="st">"ROY"</span>, <span class="dt">light =</span> <span class="dv">3</span>)</code></pre></div>
+<pre><code>#&gt; [1] "#E44444" "#E4AF44" "#E4E444"</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_across.html">sc_across</a></span>(<span class="dt">palette =</span> <span class="st">"ROY"</span>, <span class="dt">light =</span> <span class="dv">3</span>, <span class="dt">return =</span> <span class="st">"table"</span>)</code></pre></div>
+<pre><code>#&gt;   color_name     hex
+#&gt; 1       red3 #E44444
+#&gt; 2    orange3 #E4AF44
+#&gt; 3    yellow3 #E4E444</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_across.html">sc_across</a></span>(<span class="dt">palette =</span> <span class="st">"ROY"</span>, <span class="dt">light =</span> <span class="dv">3</span>, <span class="dt">sat =</span> <span class="st">"bright"</span>, <span class="dt">return =</span> <span class="st">"plot"</span>)</code></pre></div>
 <p><img src="intro_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
 <p>Here is a list of all colors abbreviations you can use in the palette</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">color_table <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">distinct</span>(color, letter)
-<span class="co">#&gt; # A tibble: 9 x 2</span>
-<span class="co">#&gt;   color  letter</span>
-<span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt; </span>
-<span class="co">#&gt; 1 red    R     </span>
-<span class="co">#&gt; 2 orange O     </span>
-<span class="co">#&gt; 3 yellow Y     </span>
-<span class="co">#&gt; 4 green  G     </span>
-<span class="co">#&gt; 5 teal   T     </span>
-<span class="co">#&gt; 6 blue   B     </span>
-<span class="co">#&gt; 7 violet V     </span>
-<span class="co">#&gt; 8 pink   P     </span>
-<span class="co">#&gt; 9 grey   Gy</span></code></pre></div>
+<span class="st">  </span><span class="kw">distinct</span>(color, letter)</code></pre></div>
+<pre><code>#&gt; # A tibble: 9 x 2
+#&gt;   color  letter
+#&gt;   &lt;chr&gt;  &lt;chr&gt; 
+#&gt; 1 red    R     
+#&gt; 2 orange O     
+#&gt; 3 yellow Y     
+#&gt; 4 green  G     
+#&gt; 5 teal   T     
+#&gt; 6 blue   B     
+#&gt; 7 violet V     
+#&gt; 8 pink   P     
+#&gt; 9 grey   Gy</code></pre>
 </div>
 </div>
 <div id="sc_red-sc_blue-etc" class="section level2">
 <h2 class="hasAnchor">
 <a href="#sc_red-sc_blue-etc" class="anchor"></a><code><a href="../reference/sc_within.html">sc_red()</a></code>, <code><a href="../reference/sc_within.html">sc_blue()</a></code>, etc…</h2>
 <p>There is also a <code><a href="../reference/sc_within.html">sc_within()</a></code> palette defaulted for each color</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_red</a></span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="st">"bright"</span>)
-<span class="co">#&gt; [1] "#FFD6D6" "#FF8F8F" "#FF2929" "#990000"</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_blue</a></span>(<span class="dv">5</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">return =</span> <span class="st">"table"</span>)
-<span class="co">#&gt; # A tibble: 4 x 2</span>
-<span class="co">#&gt;   color_name hex    </span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;  </span>
-<span class="co">#&gt; 1 blue5      #0A1D43</span>
-<span class="co">#&gt; 2 blue4      #133986</span>
-<span class="co">#&gt; 3 blue3      #4479E4</span>
-<span class="co">#&gt; 4 blue2      #9DB9F1</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_red</a></span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="st">"bright"</span>)</code></pre></div>
+<pre><code>#&gt; [1] "#FFD6D6" "#FF8F8F" "#FF2929" "#990000"</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_blue</a></span>(<span class="dv">5</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">return =</span> <span class="st">"table"</span>)</code></pre></div>
+<pre><code>#&gt; # A tibble: 4 x 2
+#&gt;   color_name hex    
+#&gt;   &lt;chr&gt;      &lt;chr&gt;  
+#&gt; 1 blue5      #0A1D43
+#&gt; 2 blue4      #133986
+#&gt; 3 blue3      #4479E4
+#&gt; 4 blue2      #9DB9F1</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_pink</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>), <span class="dt">sat =</span> <span class="st">"dull"</span>, <span class="dt">return =</span> <span class="st">"plot"</span>)</code></pre></div>
 <p><img src="intro_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
 <p>And here’s an example where you might use it in a ggplot</p>

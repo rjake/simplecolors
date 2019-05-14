@@ -1,4 +1,4 @@
 library(testthat)
-library(simplecolors)
+library(PKG)
 
-test_check("simplecolors")
+test_check("PKG")
