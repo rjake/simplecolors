@@ -1,7 +1,7 @@
 Package: simplecolors
 Title: A simplified method for selecting colors and
     color palettes
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: 
     person(given = "Jake",
            family = "Riley",
@@ -15,19 +15,6 @@ Description: Using the HLS colorspace model, colors and color
     color palette across hues by holding the light and saturation values
     constant and varying the hue.
 Depends: R (>= 3.1.0)
-License: GNU General Public License | file LICENSE
-URL: https://github.com/rjake/simplecolors
-BugReports: https://github.com//rjake/simplecolors/issues
-Encoding: UTF-8
-LazyData: true
-Suggests: 
-    testthat,
-    covr,
-    spelling,
-    knitr,
-    rmarkdown
-Language: en-US
-RoxygenNote: 6.1.1
 Imports: 
     colorspace,
     dplyr,
@@ -36,4 +23,18 @@ Imports:
     magrittr,
     stats,
     stringr
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat,
+    covr,
+    devtools
+License: GNU General Public License | file LICENSE
+URL: https://github.com/rjake/simplecolors
+BugReports: https://github.com//rjake/simplecolors/issues
+Language: en-US
+LazyData: true
 VignetteBuilder: knitr
+LinkingTo: Rcpp (>= 0.12.0), RcppArmadillo (>= 0.8.300.1.0)
+RoxygenNote: 6.1.1
+Encoding: UTF-8

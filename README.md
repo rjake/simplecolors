@@ -14,7 +14,7 @@ The colors follow a pattern of [saturation] [color name] [lightness]
 
 More details can be found in  created can be found in `vignette("Intro", package = "simplecolors")`.
 
-![](images/color_names.png)
+![](man/figures/color_names.png)
 
 
   <!-- badges: start -->
