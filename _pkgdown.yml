@@ -1,11 +1,1 @@
 url: https://rjake.github.io/simplecolors/
-
-template:
-  params:
-    bootswatch: paper
-
-navbar:
-  type: inverse
-  right:
-    - icon: fa-github fa-lg
-      href: https://github.com/rjake/simplecolors
