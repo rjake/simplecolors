@@ -1,4 +1,5 @@
-url: https://rjake.github.io/simplecolors/ 
+url: https://rjake.github.io/simplecolors/
+
 template:
   params:
     bootswatch: paper
