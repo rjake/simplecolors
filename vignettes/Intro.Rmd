@@ -23,12 +23,11 @@ library(ggplot2)
 library(simplecolors)
 ```
 
-# Rationale
-Trying to find a good color palette is difficult. The default `colorspace` colors have inconsisent names and the lightness/saturation are all over the place. Using the `colorspace::HLS()` function however, a smaller, consistent set of colors allows palettes to be made both within one color or across hues. 
+Trying to find a good color palette in R is difficult. I think most people search google for `ggplot colors` and end up looking at some wild image like shown below on the right. These colors are used in `grDevices::colors` and are actually from the [X11 colors](https://en.wikipedia.org/wiki/X11_color_names) that were developed in the 1980s. Unfortunately, they have inconsisent names and the lightness/saturation are all over the place. Using the `colorspace::HLS()` function however, a smaller, consistent set of colors allows palettes to be made both within one color or across hues. 
 
-Here's a comparison of the base colors (left) and the simplecolors (right).
+Here's a comparison of the base X11 colors (left) and the `simplecolors` (right).
 
-![comparison](images/comparison.png){width=600px}
+![](images/comparison.png){width=600px}
 
 # Construction
 
@@ -64,7 +63,25 @@ There are multiple ways to access palettes
 
 * `sc_within()` - within 1 hue, the default is a lightness of 2:6, and no modifier (sat == "")
 * `sc_across()` - holding light and saturation constant (at your choosing), a palette will be built across hues in the order you specify. The palette order is created using the first letter (uppercase) of each color, or "Gy" for "grey".
-* `sc_[color]()` like sc_red()
+* `sc_[color]()` there is a shortcut of `sc_within()` for each of the hues, for example `sc_teal()`, `sc_red()`, etc.
+
+```{r echo=F, eval=F}
+p1 <- 
+  sc_within(hue = "teal", light = 1:5, sat = "bright", return = "plot") +
+  labs(title = 'sc_within(hue = "teal", light = 3:5, sat = "bright")')
+
+p2 <- 
+  sc_across(palette = "RTVGy", light = 4, sat = "muted", return = "plot") +
+  labs(title = 'sc_across(palette = "RTVGy", light = 4, sat = "muted")')
+
+p3 <- 
+  sc_red(1:4, "bright", return = "plot") +
+  labs(title = 'sc_red(1:4, "bright")')
+
+gridExtra::grid.arrange(p1, p2, p3, nrow = 1)
+```
+![](images/compare_functions.png){width=600px}
+
 
 ```{r}
 sc_within(hue = "teal", light = 3:5, sat = "bright")
@@ -140,3 +157,5 @@ iris %>%
   theme_minimal()
 ```
 
+# All colors
+![](../man/figures/color_names.png)
