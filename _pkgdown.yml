@@ -10,7 +10,7 @@ navbar:
     - text: "Vignettes"
       menu:
       - text: Introduction to simplecolors
-        href: articles/intro.html
+        href: articles/Intro.html
     - text: "News"
       href: news/index.html
   right:
