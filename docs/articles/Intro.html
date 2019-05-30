@@ -90,14 +90,10 @@
 
     
     
-<div id="rationale" class="section level1">
-<h1 class="hasAnchor">
-<a href="#rationale" class="anchor"></a>Rationale</h1>
-<p>Trying to find a good color palette is difficult. The default <code>colorspace</code> colors have inconsisent names and the lightness/saturation are all over the place. Using the <code><a href="https://www.rdocumentation.org/packages/colorspace/topics/HLS">colorspace::HLS()</a></code> function however, a smaller, consistent set of colors allows palettes to be made both within one color or across hues.</p>
-<p>Here’s a comparison of the base colors (left) and the simplecolors (right).</p>
+<p>Trying to find a good color palette in R is difficult. I think most people search google for <code>ggplot colors</code> and end up looking at some wild image like shown below on the right. These colors are used in <code><a href="https://www.rdocumentation.org/packages/grDevices/topics/colors">grDevices::colors</a></code> and are actually from the <a href="https://en.wikipedia.org/wiki/X11_color_names">X11 colors</a> that were developed in the 1980s. Unfortunately, they have inconsisent names and the lightness/saturation are all over the place. Using the <code><a href="https://www.rdocumentation.org/packages/colorspace/topics/HLS">colorspace::HLS()</a></code> function however, a smaller, consistent set of colors allows palettes to be made both within one color or across hues.</p>
+<p>Here’s a comparison of the base X11 colors (left) and the <code>simplecolors</code> (right).</p>
 <div class="figure">
-<img src="images/comparison.png" alt="comparison" width="600"><p class="caption">comparison</p>
-</div>
+<img src="images/comparison.png" width="600">
 </div>
 <div id="construction" class="section level1">
 <h1 class="hasAnchor">
@@ -167,8 +163,11 @@
 <li>
 <code><a href="../reference/sc_across.html">sc_across()</a></code> - holding light and saturation constant (at your choosing), a palette will be built across hues in the order you specify. The palette order is created using the first letter (uppercase) of each color, or “Gy” for “grey”.</li>
 <li>
-<code>sc_[color]()</code> like sc_red()</li>
+<code>sc_[color]()</code> there is a shortcut of <code><a href="../reference/sc_within.html">sc_within()</a></code> for each of the hues, for example <code><a href="../reference/sc_within.html">sc_teal()</a></code>, <code><a href="../reference/sc_within.html">sc_red()</a></code>, etc.</li>
 </ul>
+<div class="figure">
+<img src="images/compare_functions.png" width="600">
+</div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"teal"</span>, <span class="dt">light =</span> <span class="dv">3</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">sat =</span> <span class="st">"bright"</span>)</code></pre></div>
 <pre><code>#&gt; [1] "#29FFFF" "#009999" "#004D4D"</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_across.html">sc_across</a></span>(<span class="dt">palette =</span> <span class="st">"OTVGy"</span>, <span class="dt">light =</span> <span class="dv">4</span>, <span class="dt">sat =</span> <span class="st">"muted"</span>)</code></pre></div>
@@ -192,7 +191,7 @@
 #&gt; 3 blue4      #133986
 #&gt; 4 blue5      #0A1D43</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"blue"</span>, <span class="dt">return =</span> <span class="st">"plot"</span>)</code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
 </div>
 <div id="using-sc_across" class="section level4">
 <h4 class="hasAnchor">
@@ -206,7 +205,7 @@
 #&gt; 2    orange3 #E4AF44
 #&gt; 3    yellow3 #E4E444</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_across.html">sc_across</a></span>(<span class="dt">palette =</span> <span class="st">"ROY"</span>, <span class="dt">light =</span> <span class="dv">3</span>, <span class="dt">sat =</span> <span class="st">"bright"</span>, <span class="dt">return =</span> <span class="st">"plot"</span>)</code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-12-1.png" width="700"></p>
 <p>Here is a list of all colors abbreviations you can use in the palette</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">color_table <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">distinct</span>(color, letter)</code></pre></div>
@@ -239,7 +238,7 @@
 #&gt; 3 blue3      #4479E4
 #&gt; 4 blue2      #9DB9F1</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/sc_within.html">sc_pink</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>), <span class="dt">sat =</span> <span class="st">"dull"</span>, <span class="dt">return =</span> <span class="st">"plot"</span>)</code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-16-1.png" width="700"></p>
 <p>And here’s an example where you might use it in a ggplot</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">blue_and_red &lt;-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(
   <span class="kw"><a href="../reference/sc_within.html">sc_blue</a></span>(<span class="dv">4</span><span class="op">:</span><span class="dv">2</span>, <span class="st">"bright"</span>), 
@@ -253,7 +252,14 @@ iris <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="co">#setting your custom gradients</span>
 <span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> blue_and_red) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-16-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-17-1.png" width="700"></p>
+</div>
+</div>
+<div id="all-colors" class="section level1">
+<h1 class="hasAnchor">
+<a href="#all-colors" class="anchor"></a>All colors</h1>
+<div class="figure">
+<img src="../man/figures/color_names.png">
 </div>
 </div>
   </div>
@@ -263,8 +269,7 @@ iris <span class="op">%&gt;%</span><span class="st"> </span>
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#rationale">Rationale</a></li>
-      <li><a href="#construction">Construction</a></li>
+<li><a href="#construction">Construction</a></li>
       <li><a href="#the-sc-function">The <code><a href="--/reference/sc-html">sc()</a></code> function</a></li>
       <li>
 <a href="#palettes">Palettes</a><ul class="nav nav-pills nav-stacked">
@@ -272,6 +277,7 @@ iris <span class="op">%&gt;%</span><span class="st"> </span>
       <li><a href="#sc_red-sc_blue-etc"><code><a href="--/reference/sc_within-html">sc_red()</a></code>, <code><a href="--/reference/sc_within-html">sc_blue()</a></code>, etc…</a></li>
       </ul>
 </li>
+      <li><a href="#all-colors">All colors</a></li>
       </ul>
 </div>
       </div>
