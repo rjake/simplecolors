@@ -37,35 +37,35 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../reference/index.html">Functions</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
+    Vignettes
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/intro.html">Introduction to simplecolors</a>
+      <a href="../articles/Intro.html">Introduction to simplecolors</a>
     </li>
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">Changelog</a>
+  <a href="../news/index.html">News</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
+  <a href="https://twitter.com/yake_84">
+    <span class="fa fa-twitter"></span>
+
+  </a>
+</li>
+<li>
   <a href="https://github.com/rjake/simplecolors">
-    <span class="fa fa-github fa-lg"></span>
-     
+    <span class="fa fa-github"></span>
+
   </a>
 </li>
       </ul>
@@ -76,20 +76,20 @@
 </div>
 <!--/.navbar -->
 
-      
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Introduction to simplecolors</h1>
-            
-      
+
+
       <small class="dont-index">Source: <a href="https://github.com/rjake/simplecolors/blob/master/vignettes/intro.Rmd"><code>vignettes/intro.Rmd</code></a></small>
       <div class="hidden name"><code>intro.Rmd</code></div>
 
     </div>
 
-    
-    
+
+
 <p>Trying to find a good color palette in R is difficult. I think most people search google for <code>ggplot colors</code> and end up looking at some wild image like shown below on the right. These colors are used in <code><a href="https://www.rdocumentation.org/packages/grDevices/topics/colors">grDevices::colors</a></code> and are actually from the <a href="https://en.wikipedia.org/wiki/X11_color_names">X11 colors</a> that were developed in the 1980s. Unfortunately, they have inconsisent names and the lightness/saturation are all over the place. Using the <code><a href="https://www.rdocumentation.org/packages/colorspace/topics/HLS">colorspace::HLS()</a></code> function however, a smaller, consistent set of colors allows palettes to be made both within one color or across hues.</p>
 <p>Here’s a comparison of the base X11 colors (left) and the <code>simplecolors</code> (right).</p>
 <p><img src="images/comparison.png" width="600"></p>
@@ -180,8 +180,8 @@
 <pre><code>#&gt; [1] "#9DB9F1" "#4479E4" "#133986" "#0A1D43"</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw"><a href="../reference/sc_within.html">sc_within</a></span>(<span class="dt">hue =</span> <span class="st">"blue"</span>, <span class="dt">return =</span> <span class="st">"table"</span>)</a></code></pre></div>
 <pre><code>#&gt; # A tibble: 4 x 2
-#&gt;   color_name hex    
-#&gt;   &lt;chr&gt;      &lt;chr&gt;  
+#&gt;   color_name hex
+#&gt;   &lt;chr&gt;      &lt;chr&gt;
 #&gt; 1 blue2      #9DB9F1
 #&gt; 2 blue3      #4479E4
 #&gt; 3 blue4      #133986
@@ -207,15 +207,15 @@
 <a class="sourceLine" id="cb19-2" title="2"><span class="st">  </span><span class="kw">distinct</span>(color, letter)</a></code></pre></div>
 <pre><code>#&gt; # A tibble: 9 x 2
 #&gt;   color  letter
-#&gt;   &lt;chr&gt;  &lt;chr&gt; 
-#&gt; 1 red    R     
-#&gt; 2 orange O     
-#&gt; 3 yellow Y     
-#&gt; 4 green  G     
-#&gt; 5 teal   T     
-#&gt; 6 blue   B     
-#&gt; 7 violet V     
-#&gt; 8 pink   P     
+#&gt;   &lt;chr&gt;  &lt;chr&gt;
+#&gt; 1 red    R
+#&gt; 2 orange O
+#&gt; 3 yellow Y
+#&gt; 4 green  G
+#&gt; 5 teal   T
+#&gt; 6 blue   B
+#&gt; 7 violet V
+#&gt; 8 pink   P
 #&gt; 9 grey   Gy</code></pre>
 </div>
 </div>
@@ -227,8 +227,8 @@
 <pre><code>#&gt; [1] "#FFD6D6" "#FF8F8F" "#FF2929" "#990000"</code></pre>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw"><a href="../reference/sc_within.html">sc_blue</a></span>(<span class="dv">5</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">return =</span> <span class="st">"table"</span>)</a></code></pre></div>
 <pre><code>#&gt; # A tibble: 4 x 2
-#&gt;   color_name hex    
-#&gt;   &lt;chr&gt;      &lt;chr&gt;  
+#&gt;   color_name hex
+#&gt;   &lt;chr&gt;      &lt;chr&gt;
 #&gt; 1 blue5      #0A1D43
 #&gt; 2 blue4      #133986
 #&gt; 3 blue3      #4479E4
@@ -289,7 +289,7 @@
       </footer>
 </div>
 
-  
+
 
   </body>
 </html>
