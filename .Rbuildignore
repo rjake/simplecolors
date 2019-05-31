@@ -5,6 +5,7 @@
 vignettes/intro_cache/*
 vignettes/intro_files/*
 ^docs$
+^scripts$
 ^_pkgdown\.yml$
 ^.travis\.yml$
 .gitignore.deploy
