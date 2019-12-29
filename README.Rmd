@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   message = FALSE,
   warning = FALSE,
-  fig.path = "figs/README-"
+  fig.path = "man/figures/"
 )
 ```
 
@@ -36,4 +36,4 @@ More details can be found in  created can be found in
 
 `vignette("Intro", package = "simplecolors")`.
 
-![](images/color_names.png)
+![](man/figures/color_names.png)
