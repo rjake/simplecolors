@@ -1,4 +1,4 @@
-#' simplecolors color names
+#' Specify color(s) by name
 #'
 #' @param ... the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"
 #'
@@ -22,18 +22,16 @@ sc <- function(...) {
 
 
 
-#' Title
+#' Helper function for displaying palette for sc_within or sc_across
 #'
 #' @param df passing a data frame with `H360`, `color`, `letter`, `sat`, `light` and `hex`
 #'
 #' @importFrom ggplot2 ggplot aes facet_grid geom_tile scale_y_reverse scale_fill_identity labs
-#' @export
-#'
+#' @noRd
 #' @examples
-#'
 #' show_palette(color_table)
 #'
-show_palette <- function(df = color_table) {
+show_palette <- function(df = simplecolors::color_table) {
   df %>%
     ggplot() +
     facet_grid(.~H360 + color + letter, scales = "free_x") +
@@ -48,13 +46,11 @@ show_palette <- function(df = color_table) {
 
 
 #' Helper function to print output
-#'
 #' @param df a dataframe built from color_table
 #' @param return defaults to returning hex codes but can also return a table or plot of the generated palette
-#'
 #' @importFrom dplyr select arrange pull
 #' @importFrom forcats fct_reorder
-
+#' @noRd
 specify_output <- function(df, return = NULL){
   if (missing(return) | is.null(return)) {
 

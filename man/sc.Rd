@@ -2,7 +2,7 @@
 % Please edit documentation in R/build_palettes.R
 \name{sc}
 \alias{sc}
-\title{simplecolors color names}
+\title{Specify color(s) by name}
 \usage{
 sc(...)
 }
@@ -10,7 +10,7 @@ sc(...)
 \item{...}{the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"}
 }
 \description{
-simplecolors color names
+Specify color(s) by name
 }
 \examples{
 sc("violet4", "brightteal3")
