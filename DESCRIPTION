@@ -6,8 +6,7 @@ Authors@R:
     person(given = "Jake",
            family = "Riley",
            role = c("aut", "cre"),
-           email = "rjake@sas.upenn.edu",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "rjake@sas.upenn.edu")
 Description: Using the HLS colorspace model, colors and color
     palettes can be generated with ease.  You can build a light-to-dark
     palette in the same hue by holding the hue and saturation values
@@ -36,5 +35,5 @@ Language: en-US
 LazyData: true
 VignetteBuilder: knitr
 LinkingTo: Rcpp (>= 0.12.0), RcppArmadillo (>= 0.8.300.1.0)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Encoding: UTF-8
