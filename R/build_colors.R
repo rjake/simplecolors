@@ -97,9 +97,8 @@ build_colors <- function() {
 
 #' Show all available colors
 #'
-#' Plots the \code{\link{color_table}} values. The hue reference range can be adjusted for consistency across different tools.
+#' Plots the \code{\link{color_table}} values.
 #'
-#' @param display_type string "1", "255", "360", or blank. This will show the colors based on different hue limits "1" for 0-1, "255" for 0-255, "360" for 0-360. Otherwise, the default is the built-in colornames.
 #' @param labels logical TRUE (default) will plot the color with color names, FALSE will plot the colors only
 #' @return ggplot
 #'
@@ -107,62 +106,45 @@ build_colors <- function() {
 #' @importFrom forcats fct_rev
 #' @importFrom ggplot2 ggplot aes facet_wrap geom_tile geom_label scale_fill_identity labs theme element_rect
 #'
-#' @noRd
+#' @export
 #'
 #' @examples
 #'
-#' show_colors(display_type = "simplecolors")
-#' show_colors(display_type = "1")
-#' show_colors(display_type = "255")
-#' show_colors(display_type = "260")
+#' show_colors()
 
-show_colors <- function(display_type = "simplecolors", labels = TRUE) {
+show_colors <- function(labels = FALSE) {
 
   df <-
     color_table %>%
     filter(!is.na(light)) %>%
     mutate(
       use_h = H360,
-      use_l = L1,
-      use_s = S1
+      use_l = fct_rev(factor(light)),
+      use_s = sat,
+      x = factor(sat),
+      y = factor(light) %>% fct_rev(),
+      facet =
+        paste0(color, " (", letter, ")") %>%
+        fct_reorder(H360)
     )
 
-  if (display_type == "255") {
-
-    df <- df %>% mutate(use_h = H255)
-
-  } else if (display_type == "1") {
-
-    df <-
-      df %>%
-      mutate(
-        use_h = H1,
-        use_l = L1,
-        use_s = S1
-      )
-
-  } else {
-    df <-
-      df %>%
-      mutate(
-        use_l = fct_rev(factor(light)),
-        use_s = sat
-      )
-  }
-
-  #vignette("spc", "rocqi")
+  # vignette("extending-ggplot2", "ggplot2")
   p <-
-    ggplot(df, aes(x = factor(sat), y = factor(light) %>% fct_rev())) +
-    facet_wrap(~use_h + paste0(color, " (", letter, ")"), nrow = 3, scales = "free_y") +
+    ggplot(df, aes(x, y)) +
+    facet_wrap(~facet, nrow = 3, scales = "free_y") +
     geom_tile(aes(fill = hex), color = "grey90") +
-    geom_tile(aes(x = factor(""), y = factor(3)), fill = NA, color = "white", size = 1.5) +
+    geom_tile(
+      aes(x = factor(""), y = factor(3)),
+      fill = NA, color = "white", size = 1.5
+    ) +
     scale_fill_identity() +
     theme(panel.background = element_rect(fill = "white", color = "grey90")) +
     labs(
       x = "Saturation",
       y = "Light",
-      title = paste("Hue referencing", display_type),
-      subtitle = 'The default is a lightness of 3 and can be specified by color name alone, ex. "red", "violet', "teal"
+      subtitle = 'The default is a lightness of 3 and can be specified by color name alone
+ex. "red", "violet", "teal"
+or with modifiers "brightpink2", "mutedred3", "blue4"'
     )
 
   if (labels) {
@@ -170,7 +152,7 @@ show_colors <- function(display_type = "simplecolors", labels = TRUE) {
       p +
       geom_label(
         data = df,
-        aes(x = factor(sat), y = factor(light) %>% fct_rev(), label = color_name),
+        aes(x, y, label = color_name),
         label.size = 0, alpha = 0.8
       )
   }
