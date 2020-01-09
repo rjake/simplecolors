@@ -62,7 +62,7 @@ specify_output <- function(df, return = NULL){
 
   } else if (return == "plot") {
 
-    df %>% simplecolors::show_palette()
+    df %>% show_palette()
 
   }
 }
