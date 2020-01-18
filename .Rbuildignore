@@ -18,3 +18,4 @@ LICENSE
 CONTRIBUTORS
 .github/*
 ^README\.Rmd$
+data-raw/
