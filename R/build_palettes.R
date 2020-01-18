@@ -31,9 +31,15 @@ sc <- function(...) {
 #' @examples
 #' show_palette(head(color_table, 8*3))
 show_palette <- function(df = simplecolors::color_table) {
+  if (!"label" %in% names(df)) {
+    df <-
+      df %>%
+      mutate(label = paste0(color, "\n(", letter, ")"))
+  }
+
   df %>%
     ggplot() +
-    facet_grid(.~H360 + color + letter, scales = "free_x") +
+    facet_grid(.~label, scales = "free_x") +
     geom_tile(aes(x = sat, y = light, fill = hex), color = "white") +
     scale_y_reverse(breaks = 0:9) +
     scale_fill_identity() +
@@ -111,14 +117,13 @@ sc_within <- function(hue,
           color %in% !! hue,
           light %in% !! light,
           (!! hue == "grey" | sat %in% !! sat)
-      ) %>%
-      left_join(l_order, by = "light") %>%
-      left_join(s_order, by = "sat") %>%
-      mutate(sat = fct_reorder(factor(sat), s_ord)) %>%
-      arrange(l_ord, s_ord)
+        ) %>%
+        left_join(l_order, by = "light") %>%
+        left_join(s_order, by = "sat") %>%
+        mutate(sat = fct_reorder(factor(sat), s_ord)) %>%
+        arrange(l_ord, s_ord)
     )
 
-  #df <- df[which(df$L == !!L),]
   specify_output(df, return)
 
 }
@@ -174,7 +179,10 @@ sc_across <- function(palette = "ROYGTBVPGy",
         stringsAsFactors = FALSE
       ) %>%
         left_join(filter_df) %>%
-        mutate(H360 = fct_inorder(factor(H360)))
+        mutate(
+          label = paste0(color, "\n(", letter, ")"),
+          label = fct_inorder(factor(label))
+        )
     )
 
   specify_output(df, return)

@@ -6,7 +6,7 @@ if (getRversion() >= "3.0.0") {
       "color", "color_name", "color_sat",
       "l_ord", "letter", "light",
       "s_ord", "sat", "use_l", "use_s",
-      "x", "y"
+      "x", "y", "label"
     )
   )
 }
