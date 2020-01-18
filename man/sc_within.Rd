@@ -15,23 +15,23 @@
 \usage{
 sc_within(hue, light = c(2:5), sat = "", return = NULL)
 
-sc_red(light = 2:5, sat = "", ...)
+sc_red(light = 2:5, sat = "", return = NULL)
 
-sc_orange(light = 2:5, sat = "", ...)
+sc_orange(light = 2:5, sat = "", return = NULL)
 
-sc_yellow(light = 2:5, sat = "", ...)
+sc_yellow(light = 2:5, sat = "", return = NULL)
 
-sc_green(light = 2:5, sat = "", ...)
+sc_green(light = 2:5, sat = "", return = NULL)
 
-sc_teal(light = 2:5, sat = "", ...)
+sc_teal(light = 2:5, sat = "", return = NULL)
 
-sc_blue(light = 2:5, sat = "", ...)
+sc_blue(light = 2:5, sat = "", return = NULL)
 
-sc_violet(light = 2:5, sat = "", ...)
+sc_violet(light = 2:5, sat = "", return = NULL)
 
-sc_pink(light = 2:5, sat = "", ...)
+sc_pink(light = 2:5, sat = "", return = NULL)
 
-sc_grey(light = 2:5, sat = "", ...)
+sc_grey(light = 2:5, sat = "", return = NULL)
 }
 \arguments{
 \item{hue}{ex: "red", "blue", "violet"}
@@ -44,37 +44,14 @@ sc_grey(light = 2:5, sat = "", ...)
 }
 \description{
 Generates a palette within 1 hue
-
-Generates a palette of reds
-
-Generates a palette of oranges
-
-Generates a palette of yellows
-
-Generates a palette of greens
-
-Generates a palette of teals
-
-Generates a palette of blues
-
-Generates a palette of violets
-
-Generates a palette of pinks
-
-Generates a palette of greys
 }
 \examples{
-
+sc_within("violet", 1:3)
 sc_within("violet", 1:5, "bright" , return = "table")
 sc_within("violet", 2:4, c("bright", "muted"), return = "plot")
-sc_within("red", 1:3)
-
-
 }
 \seealso{
-\code{\link{sc_across}}
-
-Other palette: 
+Other palettes: 
 \code{\link{sc_across}()}
 }
-\concept{palette}
+\concept{palettes}
