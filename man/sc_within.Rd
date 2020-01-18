@@ -74,6 +74,7 @@ sc_within("red", 1:3)
 \seealso{
 \code{\link{sc_across}}
 
-Other palette: \code{\link{sc_across}}
+Other palette: 
+\code{\link{sc_across}()}
 }
 \concept{palette}

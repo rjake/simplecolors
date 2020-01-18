@@ -4,8 +4,7 @@
 \alias{sc_across}
 \title{Generates a palette within across hues}
 \usage{
-sc_across(palette = "ROYGTBVPGy", light = 3, sat = "",
-  return = NULL)
+sc_across(palette = "ROYGTBVPGy", light = 3, sat = "", return = NULL)
 }
 \arguments{
 \item{palette}{the first letter of each hue to include}
@@ -30,6 +29,7 @@ sc_across(palette = "RBTVPGy", light = 4, return = "plot")
 \seealso{
 \code{\link{sc_within}}
 
-Other palette: \code{\link{sc_within}}
+Other palette: 
+\code{\link{sc_within}()}
 }
 \concept{palette}
