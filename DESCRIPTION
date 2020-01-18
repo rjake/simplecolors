@@ -28,12 +28,11 @@ Suggests:
     testthat,
     covr,
     devtools
-License: GNU General Public License | file LICENSE
+License: GNU General Public License
 URL: https://github.com/rjake/simplecolors
 BugReports: https://github.com//rjake/simplecolors/issues
 Language: en-US
 LazyData: true
 VignetteBuilder: knitr
-LinkingTo: Rcpp (>= 0.12.0), RcppArmadillo (>= 0.8.300.1.0)
 RoxygenNote: 7.0.2
 Encoding: UTF-8
