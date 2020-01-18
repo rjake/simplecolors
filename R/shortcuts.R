@@ -1,126 +1,109 @@
-#' Generates a palette of reds
-#' @inheritParams sc_within
 #' @export
 #' @rdname sc_within
-sc_red <- function(light = 2:5, sat = "", ...) {
+sc_red <- function(light = 2:5, sat = "", return = NULL) {
   sc_within(
     hue = "red",
     light = light,
     sat = sat,
-    ...
+    return = return
   )
 }
 
 
-#' Generates a palette of oranges
-#' @inheritParams sc_within
 #' @export
 #' @rdname sc_within
-sc_orange <- function(light = 2:5, sat = "", ...) {
+sc_orange <- function(light = 2:5, sat = "", return = NULL) {
   sc_within(
     hue = "orange",
     light = light,
     sat = sat,
-    ...
+    return = return
   )
 }
 
 
-#' Generates a palette of yellows
-#' @inheritParams sc_within
 #' @export
 #' @rdname sc_within
-sc_yellow <- function(light = 2:5, sat = "", ...) {
+sc_yellow <- function(light = 2:5, sat = "", return = NULL) {
   sc_within(
     hue = "yellow",
     light = light,
     sat = sat,
-    ...
+    return = return
   )
 }
 
-#' Generates a palette of greens
-#' @inheritParams sc_within
+
 #' @export
 #' @rdname sc_within
-sc_green <- function(light = 2:5, sat = "", ...) {
+sc_green <- function(light = 2:5, sat = "", return = NULL) {
   sc_within(
     hue = "green",
     light = light,
     sat = sat,
-    ...
+    return = return
   )
 }
 
 
-#' Generates a palette of teals
-#' @inheritParams sc_within
 #' @export
 #' @rdname sc_within
-sc_teal <- function(light = 2:5, sat = "", ...) {
+sc_teal <- function(light = 2:5, sat = "", return = NULL) {
   sc_within(
     hue = "teal",
     light = light,
     sat = sat,
-    ...
+    return = return
   )
 }
 
-#' Generates a palette of blues
-#' @inheritParams sc_within
+
 #' @export
 #' @rdname sc_within
-sc_blue <- function(light = 2:5, sat = "", ...) {
+sc_blue <- function(light = 2:5, sat = "", return = NULL) {
   sc_within(
     hue = "blue",
     light = light,
     sat = sat,
-    ...
+    return = return
   )
 }
 
 
-#' Generates a palette of violets
-#' @inheritParams sc_within
 #' @export
 #' @rdname sc_within
-sc_violet <- function(light = 2:5, sat = "", ...) {
+sc_violet <- function(light = 2:5, sat = "", return = NULL) {
   sc_within(
     hue = "violet",
     light = light,
     sat = sat,
-    ...
+    return = return
   )
 }
 
 
-#' Generates a palette of pinks
-#' @inheritParams sc_within
 #' @export
 #' @rdname sc_within
-sc_pink <- function(light = 2:5, sat = "", ...) {
+sc_pink <- function(light = 2:5, sat = "", return = NULL) {
   sc_within(
     hue = "pink",
     light = light,
     sat = sat,
-    ...
+    return = return
   )
 }
 
 
-#' Generates a palette of greys
-#' @inheritParams sc_within
 #' @export
 #' @rdname sc_within
-sc_grey <- function(light = 2:5, sat = "", ...) {
+sc_grey <- function(light = 2:5, sat = "", return = NULL) {
   sc_within(
     hue = "grey",
     light = light,
     sat = sat,
-    ...
+    return = return
   )
 }
-
 
 
 # make_color_functions <- function() {
@@ -131,12 +114,12 @@ sc_grey <- function(light = 2:5, sat = "", ...) {
 #
 #     assign(
 #       paste0("delete_", unique_colors[i]),
-#       function(light = 2:5, sat = "", ..., envir = current()) {
+#       function(light = 2:5, sat = "", return = NULL, envir = current()) {
 #         sc_within(
 #           hue = unique_colors[i],
 #           light = light,
 #           sat = sat,
-#           ...
+#           return = return
 #         )
 #       },
 #       inherits = T,

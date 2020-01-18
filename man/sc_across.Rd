@@ -19,17 +19,13 @@ sc_across(palette = "ROYGTBVPGy", light = 3, sat = "", return = NULL)
 Generates a palette within across hues
 }
 \examples{
-sc_across()
+sc_across(palette = "BO")
 sc_across(palette = "BO", sat = "bright", return = "table")
-sc_across(sat = "bright", return = "plot")
-sc_across(sat = "dull", return = "plot")
+sc_across(palette = "BO", sat = "bright", return = "plot")
 sc_across(palette = "RBTVPGy", light = 4, return = "plot")
-
 }
 \seealso{
-\code{\link{sc_within}}
-
-Other palette: 
+Other palettes: 
 \code{\link{sc_within}()}
 }
-\concept{palette}
+\concept{palettes}
