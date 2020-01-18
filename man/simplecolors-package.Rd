@@ -24,5 +24,6 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Jake Riley \email{rjake@sas.upenn.edu}
+
 }
 \keyword{internal}
