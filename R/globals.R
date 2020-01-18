@@ -5,7 +5,8 @@ if (getRversion() >= "3.0.0") {
       "H1", "H255", "H360", "L1", "S", "S1",
       "color", "color_name", "color_sat",
       "l_ord", "letter", "light",
-      "s_ord", "sat", "use_l", "use_s"
+      "s_ord", "sat", "use_l", "use_s",
+      "x", "y"
     )
   )
 }
