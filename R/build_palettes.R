@@ -29,8 +29,7 @@ sc <- function(...) {
 #' @importFrom ggplot2 ggplot aes facet_grid geom_tile scale_y_reverse scale_fill_identity labs
 #' @noRd
 #' @examples
-#' show_palette(color_table)
-#'
+#' show_palette(head(color_table, 8*3))
 show_palette <- function(df = simplecolors::color_table) {
   df %>%
     ggplot() +
@@ -81,16 +80,12 @@ specify_output <- function(df, return = NULL){
 #' @importFrom dplyr filter left_join mutate select arrange pull
 #' @importFrom forcats fct_reorder
 #'
-#' @family palette
-#' @seealso \code{\link{sc_across}}
+#' @family palettes
 #'
 #' @examples
-#'
+#' sc_within("violet", 1:3)
 #' sc_within("violet", 1:5, "bright" , return = "table")
 #' sc_within("violet", 2:4, c("bright", "muted"), return = "plot")
-#' sc_within("red", 1:3)
-#'
-#'
 sc_within <- function(hue,
                       light = c(2:5),
                       sat = "",
@@ -145,17 +140,13 @@ sc_within <- function(hue,
 #' @importFrom stringr str_detect str_extract_all
 #' @importFrom stats setNames
 #'
-#' @family palette
-#' @seealso \code{\link{sc_within}}
+#' @family palettes
 #'
 #' @examples
-#' sc_across()
+#' sc_across(palette = "BO")
 #' sc_across(palette = "BO", sat = "bright", return = "table")
-#' sc_across(sat = "bright", return = "plot")
-#' sc_across(sat = "dull", return = "plot")
+#' sc_across(palette = "BO", sat = "bright", return = "plot")
 #' sc_across(palette = "RBTVPGy", light = 4, return = "plot")
-#'
-
 sc_across <- function(palette = "ROYGTBVPGy",
                       light = 3,
                       sat = "",
