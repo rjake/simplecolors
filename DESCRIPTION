@@ -6,8 +6,7 @@ Authors@R:
     person(given = "Jake",
            family = "Riley",
            role = c("aut", "cre"),
-           email = "rjake@sas.upenn.edu",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "rjake@sas.upenn.edu")
 Description: Using the HLS colorspace model, colors and color
     palettes can be generated with ease.  You can build a light-to-dark
     palette in the same hue by holding the hue and saturation values

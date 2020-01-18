@@ -23,7 +23,6 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Jake Riley \email{rjake@sas.upenn.edu} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
-
+\strong{Maintainer}: Jake Riley \email{rjake@sas.upenn.edu}
 }
 \keyword{internal}
