@@ -1,2 +1,2 @@
-# simplecolors 0.0.0.9002
-
+# 0.1.0
+Initial release
