@@ -1,18 +1,16 @@
 Package: simplecolors
-Title: A simplified method for selecting colors and
-    color palettes
-Version: 0.0.0.9002
+Title: Access Color Names Using a Standardized Nomenclature
+Version: 0.1.0
 Authors@R: 
     person(given = "Jake",
            family = "Riley",
            role = c("aut", "cre"),
            email = "rjake@sas.upenn.edu")
-Description: Using the HLS colorspace model, colors and color
-    palettes can be generated with ease.  You can build a light-to-dark
-    palette in the same hue by holding the hue and saturation values
-    constant and varying the lightness. Similarly, you can build a nice
-    color palette across hues by holding the light and saturation values
-    constant and varying the hue.
+Description: A curated set of colors that are called using
+    a standardized syntax: saturation + hue + lightness. For example, 
+    "brightblue4" and "mutedred2". Functions exists to return individual colors 
+    by name or to build palettes across or within hues. Most functions allow you 
+    to visualize the palettes in addition to returning the desired hex codes.
 Depends: R (>= 3.1.0)
 Imports: 
     colorspace,
@@ -27,7 +25,8 @@ Suggests:
     rmarkdown,
     testthat,
     covr,
-    devtools
+    devtools,
+    spelling
 License: GNU General Public License
 URL: https://github.com/rjake/simplecolors
 BugReports: https://github.com//rjake/simplecolors/issues
