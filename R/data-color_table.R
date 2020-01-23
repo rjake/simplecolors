@@ -18,7 +18,7 @@
 #' \item{R}{the red of the RGB value}
 #' \item{G}{the green of the RGB value}
 #' \item{B}{the blue of the RGB value}
-#' \item{H255}{for convenience as some HLS seleciton tools use a 0-255 scale}
+#' \item{H255}{for convenience as some HLS selection tools use a 0-255 scale}
 #' }
 #'
 "color_table"

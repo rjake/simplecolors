@@ -23,7 +23,7 @@ library(ggplot2)
 library(simplecolors)
 ```
 
-Trying to find a good color palette in R is difficult. I think most people search google for `ggplot colors` and end up looking at some wild image like shown below on the right. These colors are used in `grDevices::colors` and are actually from the [X11 colors](https://en.wikipedia.org/wiki/X11_color_names) that were developed in the 1980s. Unfortunately, they have inconsisent names and the lightness/saturation are all over the place. Using the `colorspace::HLS()` function however, a smaller, consistent set of colors allows palettes to be made both within one color or across hues. 
+Trying to find a good color palette in R is difficult. I think most people search google for `ggplot colors` and end up looking at some wild image like shown below on the right. These colors are used in `grDevices::colors` and are actually from the [X11 colors](https://en.wikipedia.org/wiki/X11_color_names) that were developed in the 1980s. Unfortunately, they have inconsistent names and the lightness/saturation are all over the place. Using the `colorspace::HLS()` function however, a smaller, consistent set of colors allows palettes to be made both within one color or across hues. 
 
 Here's a comparison of the base X11 colors (left) and the `simplecolors` (right).
 
