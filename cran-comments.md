@@ -9,4 +9,4 @@
 
 0 errors | 0 warnings | 0 notes
 
-* This is a new release.
+* This is the first package I have made and this is the initial release.
