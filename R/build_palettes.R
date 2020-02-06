@@ -12,8 +12,8 @@
 sc <- function(...) {
   sc_names <-
     setNames(
-      color_table$hex,
-      color_table$color_name
+      simplecolors::color_table$hex,
+      simplecolors::color_table$color_name
     )
 
   unname(sc_names[c(...)])
@@ -112,7 +112,7 @@ sc_within <- function(hue,
 
   df <-
     suppressWarnings(
-      color_table %>%
+      simplecolors::color_table %>%
         filter(
           color %in% !! hue,
           light %in% !! light,
@@ -160,7 +160,7 @@ sc_across <- function(palette = "ROYGTBVPGy",
   use_colors <- str_extract_all(palette, "[A-Z][y]?") %>% unlist()
 
   filter_df <-
-    color_table %>%
+    simplecolors::color_table %>%
     filter(
       light == !! light,
       (sat == !! sat | (str_detect(palette, "Gy") & letter == "Gy"))
