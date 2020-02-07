@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • simplecolors</title>
+<title>simplecolors: A package for accessing color names using a standardized nomenclature — simplecolors • simplecolors</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="simplecolors: A package for accessing color names using a standardized nomenclature — simplecolors" />
+<meta property="og:description" content="The simplecolors package provides two categories of functions:
+color names and color palettes" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +57,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -116,72 +119,39 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>simplecolors: A package for accessing color names using a standardized nomenclature</h1>
+    <small class="dont-index">Source: <a href='https://github.com/rjake/simplecolors/blob/master/R/simplecolors.R'><code>R/simplecolors.R</code></a></small>
+    <div class="hidden name"><code>simplecolors.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>The simplecolors package provides two categories of functions:
+color names and color palettes</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="color_table.html">color_table</a></code> </p>
-        </td>
-        <td><p>Table of available colors</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sc.html">sc()</a></code> </p>
-        </td>
-        <td><p>Specify color(s) by name</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sc_across.html">sc_across()</a></code> </p>
-        </td>
-        <td><p>Generates a palette within across hues</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sc_within.html">sc_within()</a></code> <code><a href="sc_within.html">sc_red()</a></code> <code><a href="sc_within.html">sc_orange()</a></code> <code><a href="sc_within.html">sc_yellow()</a></code> <code><a href="sc_within.html">sc_green()</a></code> <code><a href="sc_within.html">sc_teal()</a></code> <code><a href="sc_within.html">sc_blue()</a></code> <code><a href="sc_within.html">sc_violet()</a></code> <code><a href="sc_within.html">sc_pink()</a></code> <code><a href="sc_within.html">sc_grey()</a></code> </p>
-        </td>
-        <td><p>Generates a palette within 1 hue</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="show_colors.html">show_colors()</a></code> </p>
-        </td>
-        <td><p>Show all available colors</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="simplecolors.html">simplecolors</a></code> </p>
-        </td>
-        <td><p>simplecolors: A package for accessing color names using a standardized nomenclature</p></td>
-      </tr>
-    </tbody>
-    </table>
+
+    <h2 class="hasAnchor" id="color-names"><a class="anchor" href="#color-names"></a>Color names</h2>
+
+    
+
+<p>The sc() function is the main way to access color names. Colors can be called by including them as comma separated string values. For example: sc("brightblue4", "mutedred2")</p>
+    <h2 class="hasAnchor" id="color-palettes"><a class="anchor" href="#color-palettes"></a>Color palettes</h2>
+
+    
+
+<p>There are several functions that are prefixed with "sc_". These generate palettes of colors and can return hex codes (default), a table, or a plot showing the colors selected.</p>
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#color-names">Color names</a></li>
+      <li><a href="#color-palettes">Color palettes</a></li>
     </ul>
+
   </div>
 </div>
 

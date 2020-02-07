@@ -122,7 +122,7 @@ build_colors <- function() {
 show_colors <- function(labels = FALSE) {
 
   df <-
-    color_table %>%
+    simplecolors::color_table %>%
     filter(!is.na(light)) %>%
     mutate(
       use_h = H360,

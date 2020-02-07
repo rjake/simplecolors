@@ -9,4 +9,4 @@
 
 0 errors | 0 warnings | 0 notes
 
-* This is the first package I have made and this is the initial release.
+* Although all tests and CI passed in the initial release, the functions require the reference table to be namespaced
