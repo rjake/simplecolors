@@ -4,6 +4,14 @@
 simplecolors <img src="man/figures/logo.png" align="right" alt="" width="120" />
 ================================================================================
 
+<!-- [![Codecov test coverage](https://codecov.io/gh/rjake/simplecolors/branch/master/graph/badge.svg)](https://codecov.io/gh/rjake/simplecolors?branch=master)-->
+<!-- badges: start -->
+
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/simplecolors)](https://cran.r-project.org/package=simplecolors)
+[![CRAN
+Downloads](https://cranlogs.r-pkg.org/badges/grand-total/simplecolors)](https://cran.r-project.org/package=simplecolors)
+<!-- badges: end -->
+
 simplecolors is designed to generate hex codes using uniformly named
 colors.
 
