@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 ```
 
 
-Trying to put colors together in R can difficult. I think most people search google for `ggplot2 colors` and end up looking at some [funky image](http://sape.inf.usi.ch/sites/default/files/ggplot2-colour-names.png) of all the color names that work in R. These colors are from the [X11 colors](https://en.wikipedia.org/wiki/X11_color_names) that were developed in the 1980s. Unfortunately, they have inconsistent names and the lightness/saturation are all over the place. Using `simplecolors` gies you access to a smaller, consistent set of colors. It is similar to the palette tool you might be used to with Microsoft Word or Tableau. You use these colors in the same way you would use `"red"` or `"blue"` to color text or chart elements. Here are the 165 colors that are available
+Trying to put colors together in R can difficult. I think most people search google for `ggplot2 colors` and end up looking at some [funky image](http://sape.inf.usi.ch/sites/default/files/ggplot2-colour-names.png) of all the color names that work in R. These colors are from the [X11 colors](https://en.wikipedia.org/wiki/X11_color_names) that were developed in the 1980s. Unfortunately, they have inconsistent names and the lightness/saturation are all over the place. Using `simplecolors` gives you access to a smaller, consistent set of colors. It is similar to the palette tool you might be used to with Microsoft Word or Tableau. You use these colors in the same way you would use `"red"` or `"blue"` to color text or chart elements. Here are the 165 colors that are available
 
 
 ```{r eval=FALSE, echo=FALSE}
