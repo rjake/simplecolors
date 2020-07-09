@@ -96,19 +96,24 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#simplecolors-" class="anchor"></a>simplecolors <img src="reference/figures/logo.png" align="right" alt="" width="120">
 </h1></div>
+<!-- [![Codecov test coverage](https://codecov.io/gh/rjake/simplecolors/branch/master/graph/badge.svg)](https://codecov.io/gh/rjake/simplecolors?branch=master)-->
+<!-- badges: start -->
+
 <p>simplecolors is designed to generate hex codes using uniformly named colors.</p>
-<div id="install-development-version-from-github" class="section level2">
+<div id="installation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#install-development-version-from-github" class="anchor"></a>Install development version from GitHub</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"rjake/simplecolors"</span>)</a></code></pre></div>
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install the released version of <code>simplecolors</code> from <a href="https://cran.r-project.org/package=simplecolors">CRAN</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"simplecolors"</span>)</a></code></pre></div>
+<p>You can install the development version from <a href="https://github.com/rjake/simplecolors">GitHub</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"rjake/simplecolors"</span>)</a></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>The idea is to have a simpler way of accessing color values that is intuitive and easy to remember. Colors can be called using <code><a href="reference/sc.html">sc()</a></code> or by using the various palette tools <code><a href="reference/sc_across.html">sc_across()</a></code>, <code><a href="reference/sc_within.html">sc_blue()</a></code>, etc. To see all available colors use <code><a href="reference/show_colors.html">show_colors()</a></code></p>
-<p>The colors follow a pattern of [saturation] [color name] [lightness]</p>
-<p>More details can be found in created can be found in</p>
-<p><code>vignette("Intro", package = "simplecolors")</code>.</p>
+<p>The colors follow a pattern of <code>[saturation]</code> <code>[color name]</code> <code>[lightness]</code></p>
+<p>More details can be found in created can be found in <a href="https://rjake.github.io/simplecolors/articles/intro.html">this vignette</a>.</p>
 <p><img src="reference/figures/color_names.png"></p>
 </div>
 </div>
@@ -139,7 +144,14 @@
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://cran.r-project.org/package=simplecolors"><img src="https://www.r-pkg.org/badges/version/simplecolors" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://cran.r-project.org/package=simplecolors"><img src="https://cranlogs.r-pkg.org/badges/grand-total/simplecolors" alt="CRAN Downloads"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
