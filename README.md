@@ -15,8 +15,18 @@ Downloads](https://cranlogs.r-pkg.org/badges/grand-total/simplecolors)](https://
 simplecolors is designed to generate hex codes using uniformly named
 colors.
 
-Install development version from GitHub
----------------------------------------
+Installation
+------------
+
+You can install the released version of `simplecolors` from
+[CRAN](https://cran.r-project.org/package=simplecolors) with:
+
+``` r
+install.packages("simplecolors")
+```
+
+You can install the development version from
+[GitHub](https://github.com/rjake/simplecolors) with:
 
 ``` r
 devtools::install_github("rjake/simplecolors")
@@ -30,11 +40,10 @@ intuitive and easy to remember. Colors can be called using `sc()` or by
 using the various palette tools `sc_across()`, `sc_blue()`, etc. To see
 all available colors use `show_colors()`
 
-The colors follow a pattern of \[saturation\] \[color name\]
-\[lightness\]
+The colors follow a pattern of `[saturation]` `[color name]`
+`[lightness]`
 
-More details can be found in created can be found in
-
-`vignette("Intro", package = "simplecolors")`.
+More details can be found in created can be found in [this
+vignette](https://rjake.github.io/simplecolors/articles/intro.html).
 
 ![](man/figures/color_names.png)
