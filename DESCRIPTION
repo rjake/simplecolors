@@ -33,5 +33,5 @@ BugReports: https://github.com//rjake/simplecolors/issues
 Language: en-US
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0.9000
 Encoding: UTF-8
