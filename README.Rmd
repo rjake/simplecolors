@@ -25,7 +25,7 @@ knitr::opts_chunk$set(
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/simplecolors)](https://cran.r-project.org/package=simplecolors)
 [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/simplecolors)](https://cran.r-project.org/package=simplecolors)
   <!-- badges: end -->
-  
+
 simplecolors is designed to generate hex codes using uniformly named colors. 
 
 ## Installation

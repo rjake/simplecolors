@@ -20,3 +20,4 @@ CONTRIBUTORS
 ^README\.Rmd$
 data-raw/
 ^cran-comments\.md
+^pkgdown
