@@ -1,6 +1,6 @@
 ## Test environments
 * local
-    * Windows 10, R 3.6.2
+    * Windows 10, R 4.0.0
     * R devel via devtools::check_win_devel()
 * travis-ci
     * linux, osx
