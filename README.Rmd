@@ -45,6 +45,7 @@ The idea is to have a simpler way of accessing color values that is intuitive an
 
 The colors follow a pattern of `[saturation]` `[color name]` `[lightness]`
 
-More details can be found in  created can be found in [this vignette](https://rjake.github.io/simplecolors/articles/intro.html).
+More details can be found in  created can be found in [this vignette](articles/intro.html).
 
+<br><br>
 ![](man/figures/color_names.png)
