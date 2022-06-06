@@ -2,17 +2,36 @@
 % Please edit documentation in R/build_palettes.R
 \name{sc}
 \alias{sc}
-\title{Specify color(s) by name}
+\alias{sc_as_list}
+\title{Return hex codes using color names}
 \usage{
 sc(...)
+
+sc_as_list(...)
 }
 \arguments{
-\item{...}{the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"}
+\item{...}{the unique color names used in the package, ex: "brightred5",
+"grey4", "dullblue2"}
 }
 \description{
-Specify color(s) by name
+Return hex codes using color names
 }
-\examples{
-sc("violet4", "brightteal3")
+\section{Functions}{
+\itemize{
+\item \code{sc_as_list}: Return a list of hex codes
+}}
 
+\examples{
+sc("red4")
+
+sc("red4", "mutedblue2")
+
+sc_as_list("red4", "mutedblue2")
+
+# If the colors you picked go across hues, you might want to shorten them
+# so that 'red4' and 'mutedblue2' become 'red' and 'blue'.
+# The 'set_names' function from purrr lets you pass a function like this.
+# As a named vector, you can use 'my_colors$red' and 'my_colors$blue'
+sc_as_list("red4", "mutedblue2") \%>\%
+  purrr::set_names(stringr::str_remove_all, "muted|\\\\d")
 }

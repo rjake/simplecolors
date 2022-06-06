@@ -1,23 +1,49 @@
-#' Specify color(s) by name
+#' Return hex codes using color names
 #'
-#' @param ... the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"
+#' @param ... the unique color names used in the package, ex: "brightred5",
+#' "grey4", "dullblue2"
 #'
 #' @export
-#'
-#' @importFrom stats setNames
-#'
 #' @examples
-#' sc("violet4", "brightteal3")
+#' sc("red4")
+#'
+#' sc("red4", "mutedblue2")
 #'
 sc <- function(...) {
-  sc_names <-
-    setNames(
+  sc_names(c(...)) %>%
+    unname()
+}
+
+#' @export
+#' @describeIn sc Return a list of hex codes
+#' @examples
+#' sc_as_list("red4", "mutedblue2")
+#'
+#' # If the colors you picked go across hues, you might want to shorten them
+#' # so that 'red4' and 'mutedblue2' become 'red' and 'blue'.
+#' # The 'set_names' function from purrr lets you pass a function like this.
+#' # As a named vector, you can use 'my_colors$red' and 'my_colors$blue'
+#' sc_as_list("red4", "mutedblue2") %>%
+#'   purrr::set_names(stringr::str_remove_all, "muted|\\d")
+sc_as_list <- function(...) {
+  sc_names(...) %>%
+    as.list()
+}
+
+
+#' Extracts specified names from 'color_table'
+#' @noRd
+#' @importFrom purrr set_names
+#' @param ... the unique color names used in the package, ex: "brightred5",
+#' "grey4", "dullblue2"
+sc_names <- function(...) {
+  color_names <-
+    set_names(
       simplecolors::color_table$hex,
       simplecolors::color_table$color_name
     )
 
-  unname(sc_names[c(...)])
-
+  color_names[c(...)]
 }
 
 
@@ -29,7 +55,7 @@ sc <- function(...) {
 #' @importFrom ggplot2 ggplot aes facet_grid geom_tile scale_y_reverse scale_fill_identity labs
 #' @noRd
 #' @examples
-#' show_palette(head(color_table, 8*3))
+#' show_palette(head(simple_colors::color_table, 8*3))
 show_palette <- function(df = simplecolors::color_table) {
   if (!"label" %in% names(df)) {
     df <-
@@ -54,24 +80,25 @@ show_palette <- function(df = simplecolors::color_table) {
 #' @param df a dataframe built from color_table
 #' @param return defaults to returning hex codes but can also return a table or plot of the generated palette
 #' @importFrom dplyr select arrange pull
+#' @importFrom purrr set_names
 #' @importFrom forcats fct_reorder
 #' @noRd
 specify_output <- function(df, return = NULL){
-  if (missing(return) | is.null(return)) {
 
-    df %>% pull(hex)
-
-  } else if (return == "table") {
-
-    df %>% select(color_name, hex)
-
-  } else if (return == "plot") {
-
-    df %>% show_palette()
-
+  if (is.null(return)) {
+    return(df$hex)
   }
-}
 
+  # else
+  switch(
+    return,
+    table = select(df, color_name, hex),
+    plot = show_palette(df),
+    list =
+      set_names(df$hex, df$color_name) |>
+      as.list()
+  )
+}
 
 
 #' Generates a palette within 1 hue
@@ -90,8 +117,12 @@ specify_output <- function(df, return = NULL){
 #'
 #' @examples
 #' sc_within("violet", 1:3)
-#' sc_within("violet", 1:5, "bright" , return = "table")
-#' sc_within("violet", 2:4, c("bright", "muted"), return = "plot")
+#' sc_within("violet", 1:3, return = "list")
+#' sc_within("violet", 1:3, return = "table")
+#'
+#' # You can return multiple levels of saturation, the value "" is used for
+#' # colors which are not prefixed
+#' sc_within("violet", 2:4, c("bright", "", "muted"), return = "plot")
 sc_within <- function(hue,
                       light = c(2:5),
                       sat = "",
@@ -143,14 +174,14 @@ sc_within <- function(hue,
 #' @importFrom dplyr filter left_join mutate
 #' @importFrom forcats fct_inorder
 #' @importFrom stringr str_detect str_extract_all
-#' @importFrom stats setNames
+#' @importFrom purrr set_names
 #'
 #' @family palettes
 #'
 #' @examples
 #' sc_across(palette = "BO")
 #' sc_across(palette = "BO", sat = "bright", return = "table")
-#' sc_across(palette = "BO", sat = "bright", return = "plot")
+#' sc_across(palette = "BO", sat = "bright", return = "list")
 #' sc_across(palette = "RBTVPGy", light = 4, return = "plot")
 sc_across <- function(palette = "ROYGTBVPGy",
                       light = 3,
@@ -167,7 +198,7 @@ sc_across <- function(palette = "ROYGTBVPGy",
     )
 
   pal_names <-
-    setNames(
+    set_names(
       filter_df$hex,
       filter_df$letter
     )

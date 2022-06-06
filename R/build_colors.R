@@ -118,7 +118,6 @@ build_colors <- function() {
 #' @examples
 #'
 #' show_colors()
-
 show_colors <- function(labels = FALSE) {
 
   df <-

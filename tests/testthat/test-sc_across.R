@@ -35,3 +35,13 @@ test_that("sc_across returns table", {
   expect_true(is.data.frame(x))
   expect_equal(x$color_name, c("blue3", "orange3"))
 })
+
+
+test_that("sc_across returns list", {
+  x <- sc_across(
+    palette = "BO",
+    return = "list"
+  )
+  expect_true(is.list(x))
+  expect_equal(names(x), c("blue3", "orange3"))
+})
