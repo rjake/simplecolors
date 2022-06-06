@@ -15,3 +15,10 @@ test_that("includes names", {
   x <- sc("blue", "pink", with_names = TRUE)
   expect_equal(names(x), c("blue", "pink"))
 })
+
+
+test_that("sc_list() works", {
+  x <- sc_list("blue", "pink")
+  expect_true(is.list(x))
+  expect_equal(names(x), c("blue", "pink"))
+})

@@ -1,4 +1,4 @@
-#' Specify color(s) by name
+#' Return a vector of hex codes
 #'
 #' @param ... the unique color names used in the package, ex: "brightred5",
 #' "grey4", "dullblue2"
@@ -37,6 +37,12 @@ sc <- function(..., with_names = FALSE) {
   unname(color_names)
 }
 
+#' @export
+#' @describeIn sc Return a list of hex codes
+sc_list <- function(...) {
+  sc(..., with_names = TRUE) %>%
+    as.list()
+}
 
 
 #' Helper function for displaying palette for sc_within or sc_across
