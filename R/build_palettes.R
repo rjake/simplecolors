@@ -173,7 +173,7 @@ sc_within <- function(hue,
 #' @examples
 #' sc_across(palette = "BO")
 #' sc_across(palette = "BO", sat = "bright", return = "table")
-#' sc_across(palette = "BO", sat = "bright", return = "plot")
+#' sc_across(palette = "BO", sat = "bright", return = "list")
 #' sc_across(palette = "RBTVPGy", light = 4, return = "plot")
 sc_across <- function(palette = "ROYGTBVPGy",
                       light = 3,
