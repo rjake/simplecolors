@@ -108,8 +108,12 @@ specify_output <- function(df, return = NULL){
 #'
 #' @examples
 #' sc_within("violet", 1:3)
-#' sc_within("violet", 1:5, "bright" , return = "table")
-#' sc_within("violet", 2:4, c("bright", "muted"), return = "plot")
+#' sc_within("violet", 1:3, return = "list")
+#' sc_within("violet", 1:3, return = "table")
+#'
+#' # You can return multiple levels of saturation, the value "" is used for
+#' # colors which are not prefixed
+#' sc_within("violet", 2:4, c("bright", "", "muted"), return = "plot")
 sc_within <- function(hue,
                       light = c(2:5),
                       sat = "",
