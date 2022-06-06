@@ -1,4 +1,7 @@
+# Dev
+- Replace Travis CI with GitHub Actions #46
+
 # 0.1.1 Hot fix for CRAN
-Fixes the issue [#36](https://github.com/rjake/simplecolors/issues/36): `color_table` reference needs namespace in functions
+- Uses `simplecolors::color_table` as namespaced default in functions #36
 
 # 0.1.0 Initial release
