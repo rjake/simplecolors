@@ -1,23 +1,40 @@
 #' Specify color(s) by name
 #'
-#' @param ... the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"
+#' @param ... the unique color names used in the package, ex: "brightred5",
+#' "grey4", "dullblue2"
+#' @param with_names if TRUE vector will be a named vector and can be called as
+#' 'my_colors$red' and 'my_colors$blue'
+#' #' @export
 #'
-#' @export
-#'
-#' @importFrom stats setNames
+#' @importFrom purrr set_names
 #'
 #' @examples
+#'
 #' sc("violet4", "brightteal3")
 #'
-sc <- function(...) {
+#' # You can return the names of the colors using 'with_names = TRUE'
+#' sc("violet4", "brightteal3", with_names = TRUE)
+#'
+#' # If the colors you picked go across hues, you might want to shorten them
+#' # so that 'mutedred2' and 'mutedblue2' become 'red' and 'blue'.
+#' # The 'set_names' function from purrr lets you pass a function like this.
+#' # As a named vector, you can use 'my_colors$red' and 'my_colors$blue'
+#' sc("mutedred2", "mutedblue2", with_names = TRUE) %>%
+#'   purrr::set_names(stringr::str_remove_all, "muted|\\d")
+sc <- function(..., with_names = FALSE) {
   sc_names <-
     setNames(
       simplecolors::color_table$hex,
       simplecolors::color_table$color_name
     )
 
-  unname(sc_names[c(...)])
+  color_names <- sc_names[c(...)]
 
+  if (with_names) {
+    return(color_names)
+  }
+
+  unname(color_names)
 }
 
 

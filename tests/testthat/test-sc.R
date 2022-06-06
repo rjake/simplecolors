@@ -10,3 +10,8 @@ test_that("sc accepts default names", {
   expect_equal(length(x), 2)
   expect_equal(x, sc("blue3", "pink3"))
 })
+
+test_that("includes names", {
+  x <- sc("blue", "pink", with_names = TRUE)
+  expect_equal(names(x), c("blue", "pink"))
+})
