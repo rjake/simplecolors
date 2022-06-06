@@ -22,11 +22,7 @@ Imports:
     stringr
 Suggests:
     knitr,
-    rmarkdown,
-    testthat,
-    covr,
-    devtools,
-    spelling
+    rmarkdown
 License: GNU General Public License
 URL: https://github.com/rjake/simplecolors
 BugReports: https://github.com//rjake/simplecolors/issues
