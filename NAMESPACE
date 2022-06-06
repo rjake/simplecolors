@@ -3,6 +3,7 @@
 export("%>%")
 export(sc)
 export(sc_across)
+export(sc_as_list)
 export(sc_blue)
 export(sc_green)
 export(sc_grey)
