@@ -18,7 +18,7 @@ Imports:
     forcats,
     ggplot2,
     magrittr,
-    stats,
+    purrr,
     stringr
 Suggests:
     knitr,
@@ -33,5 +33,5 @@ BugReports: https://github.com//rjake/simplecolors/issues
 Language: en-US
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 7.1.0.9000
+RoxygenNote: 7.2.0
 Encoding: UTF-8

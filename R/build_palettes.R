@@ -4,7 +4,7 @@
 #' "grey4", "dullblue2"
 #' @param with_names if TRUE vector will be a named vector and can be called as
 #' 'my_colors$red' and 'my_colors$blue'
-#' #' @export
+#' @export
 #'
 #' @importFrom purrr set_names
 #'
@@ -23,7 +23,7 @@
 #'   purrr::set_names(stringr::str_remove_all, "muted|\\d")
 sc <- function(..., with_names = FALSE) {
   sc_names <-
-    setNames(
+    set_names(
       simplecolors::color_table$hex,
       simplecolors::color_table$color_name
     )
@@ -71,6 +71,7 @@ show_palette <- function(df = simplecolors::color_table) {
 #' @param df a dataframe built from color_table
 #' @param return defaults to returning hex codes but can also return a table or plot of the generated palette
 #' @importFrom dplyr select arrange pull
+#' @importFrom purrr set_names
 #' @importFrom forcats fct_reorder
 #' @noRd
 specify_output <- function(df, return = NULL){
@@ -85,7 +86,7 @@ specify_output <- function(df, return = NULL){
     table = select(df, color_name, hex),
     plot = show_palette(df),
     list =
-      setNames(df$hex, df$color_name) |>
+      set_names(df$hex, df$color_name) |>
       as.list()
   )
 }
@@ -165,7 +166,7 @@ sc_within <- function(hue,
 #' @importFrom dplyr filter left_join mutate
 #' @importFrom forcats fct_inorder
 #' @importFrom stringr str_detect str_extract_all
-#' @importFrom stats setNames
+#' @importFrom purrr set_names
 #'
 #' @family palettes
 #'
@@ -189,7 +190,7 @@ sc_across <- function(palette = "ROYGTBVPGy",
     )
 
   pal_names <-
-    setNames(
+    set_names(
       filter_df$hex,
       filter_df$letter
     )
