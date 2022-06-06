@@ -46,7 +46,7 @@ sc <- function(..., with_names = FALSE) {
 #' @importFrom ggplot2 ggplot aes facet_grid geom_tile scale_y_reverse scale_fill_identity labs
 #' @noRd
 #' @examples
-#' show_palette(head(color_table, 8*3))
+#' show_palette(head(simple_colors::color_table, 8*3))
 show_palette <- function(df = simplecolors::color_table) {
   if (!"label" %in% names(df)) {
     df <-
