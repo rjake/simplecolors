@@ -74,19 +74,20 @@ show_palette <- function(df = simplecolors::color_table) {
 #' @importFrom forcats fct_reorder
 #' @noRd
 specify_output <- function(df, return = NULL){
-  if (missing(return) | is.null(return)) {
 
-    df %>% pull(hex)
-
-  } else if (return == "table") {
-
-    df %>% select(color_name, hex)
-
-  } else if (return == "plot") {
-
-    df %>% show_palette()
-
+  if (is.null(return)) {
+    return(df$hex)
   }
+
+  # else
+  switch(
+    return,
+    table = select(df, color_name, hex),
+    plot = show_palette(df),
+    list =
+      setNames(df$hex, df$color_name) |>
+      as.list()
+  )
 }
 
 
