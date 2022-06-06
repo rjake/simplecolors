@@ -1,48 +1,51 @@
-#' Return a vector of hex codes
+#' Return hex codes using color names
 #'
 #' @param ... the unique color names used in the package, ex: "brightred5",
 #' "grey4", "dullblue2"
-#' @param with_names if TRUE vector will be a named vector and can be called as
-#' 'my_colors$red' and 'my_colors$blue'
+#'
 #' @export
-#'
-#' @importFrom purrr set_names
-#'
 #' @examples
+#' sc("red4")
 #'
-#' sc("violet4", "brightteal3")
+#' sc("red4", "mutedblue2")
 #'
-#' # You can return the names of the colors using 'with_names = TRUE'
-#' sc("violet4", "brightteal3", with_names = TRUE)
+sc <- function(...) {
+  sc_names(c(...)) %>%
+    unname()
+}
+
+#' @export
+#' @describeIn sc Return a list of hex codes
+#' @examples
+#' sc_as_list("red4", "mutedblue2")
 #'
 #' # If the colors you picked go across hues, you might want to shorten them
-#' # so that 'mutedred2' and 'mutedblue2' become 'red' and 'blue'.
+#' # so that 'red4' and 'mutedblue2' become 'red' and 'blue'.
 #' # The 'set_names' function from purrr lets you pass a function like this.
 #' # As a named vector, you can use 'my_colors$red' and 'my_colors$blue'
-#' sc("mutedred2", "mutedblue2", with_names = TRUE) %>%
+#' sc_as_list("red4", "mutedblue2") %>%
 #'   purrr::set_names(stringr::str_remove_all, "muted|\\d")
-sc <- function(..., with_names = FALSE) {
-  sc_names <-
+sc_as_list <- function(...) {
+  sc_names(...) %>%
+    as.list()
+}
+
+
+#' Extracts specified names from 'color_table'
+#' @noRd
+#' @importFrom purrr set_names
+#' @param ... the unique color names used in the package, ex: "brightred5",
+#' "grey4", "dullblue2"
+sc_names <- function(...) {
+  color_names <-
     set_names(
       simplecolors::color_table$hex,
       simplecolors::color_table$color_name
     )
 
-  color_names <- sc_names[c(...)]
-
-  if (with_names) {
-    return(color_names)
-  }
-
-  unname(color_names)
+  color_names[c(...)]
 }
 
-#' @export
-#' @describeIn sc Return a list of hex codes
-sc_list <- function(...) {
-  sc(..., with_names = TRUE) %>%
-    as.list()
-}
 
 
 #' Helper function for displaying palette for sc_within or sc_across
@@ -96,7 +99,6 @@ specify_output <- function(df, return = NULL){
       as.list()
   )
 }
-
 
 
 #' Generates a palette within 1 hue

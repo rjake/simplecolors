@@ -11,14 +11,9 @@ test_that("sc accepts default names", {
   expect_equal(x, sc("blue3", "pink3"))
 })
 
-test_that("includes names", {
-  x <- sc("blue", "pink", with_names = TRUE)
-  expect_equal(names(x), c("blue", "pink"))
-})
 
-
-test_that("sc_list() works", {
-  x <- sc_list("blue", "pink")
+test_that("sc_as_list() works", {
+  x <- sc_as_list("blue", "pink")
   expect_true(is.list(x))
   expect_equal(names(x), c("blue", "pink"))
 })
