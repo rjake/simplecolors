@@ -4,15 +4,29 @@
 \alias{sc}
 \title{Specify color(s) by name}
 \usage{
-sc(...)
+sc(..., with_names = FALSE)
 }
 \arguments{
-\item{...}{the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"}
+\item{...}{the unique color names used in the package, ex: "brightred5",
+"grey4", "dullblue2"}
+
+\item{with_names}{if TRUE vector will be a named vector and can be called as
+'my_colors$red' and 'my_colors$blue'}
 }
 \description{
 Specify color(s) by name
 }
 \examples{
+
 sc("violet4", "brightteal3")
 
+# You can return the names of the colors using 'with_names = TRUE'
+sc("violet4", "brightteal3", with_names = TRUE)
+
+# If the colors you picked go across hues, you might want to shorten them
+# so that 'mutedred2' and 'mutedblue2' become 'red' and 'blue'.
+# The 'set_names' function from purrr lets you pass a function like this.
+# As a named vector, you can use 'my_colors$red' and 'my_colors$blue'
+sc("mutedred2", "mutedblue2", with_names = TRUE) \%>\%
+  purrr::set_names(stringr::str_remove_all, "muted|\\\\d")
 }
