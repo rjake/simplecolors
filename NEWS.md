@@ -1,7 +1,10 @@
-# Dev
+# simplecolors (development version)
+- Fix github URLs & news format #56
 - Replace Travis CI with GitHub Actions #46
 
-# 0.1.1 Hot fix for CRAN
-- Uses `simplecolors::color_table` as namespaced default in functions #36
+# simplecolors 0.1.1 
+### Hot fix for CRAN
+- Adds `simplecolors::color_table` namespace to default value in functions #36
 
-# 0.1.0 Initial release
+# simplecolors 0.1.0
+- Initial release
