@@ -10,7 +10,6 @@
 #' @return data.frame
 #' @noRd
 #'
-
 build_colors <- function() {
   hue_values <- # seq(0, 330, round(330 / 11, 0))
     # c(0, 40, 60, 120, 180, 220, 270, 300)
@@ -104,7 +103,9 @@ build_colors <- function() {
 
 #' Show all available colors
 #'
-#' Plots the \code{\link{color_table}} values.
+#' @description Plots all available color values.
+#' @return Returns a plot object
+#' @details Labels can be added by using the argument \code{labels = TRUE}
 #'
 #' @param labels logical TRUE (default) will plot the color with color names, FALSE will plot the colors only
 #' @return ggplot
@@ -116,9 +117,7 @@ build_colors <- function() {
 #' @export
 #'
 #' @examples
-#'
 #' show_colors()
-
 show_colors <- function(labels = FALSE) {
 
   df <-
