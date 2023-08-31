@@ -40,8 +40,8 @@ build_colors <- function() {
       S1 = 0
     )) %>%
     # add white & black
-    rbind(c(360, 0, 0, 6, 0)) %>%
-    rbind(c(360, 1, 0, 0, 0)) %>%
+    rbind(c(360, 0, 0)) %>%
+    rbind(c(360, 1, 0)) %>%
     #filter(H360 == 360 & S1 == 0 | H360 != 360) %>%
     mutate(
       light = as.integer(factor(L1, levels = rev(l_values))),
@@ -141,7 +141,7 @@ show_colors <- function(labels = FALSE) {
     geom_tile(aes(fill = hex), color = "grey90") +
     geom_tile(
       aes(x = factor(""), y = factor(3)),
-      fill = NA, color = "white", size = 1.5
+      fill = NA, color = "white", linewidth = 1.5
     ) +
     scale_fill_identity() +
     theme(panel.background = element_rect(fill = "white", color = "grey90")) +
@@ -166,3 +166,4 @@ or with modifiers "brightpink2", "mutedred3", "blue4"'
   p
 
 }
+
