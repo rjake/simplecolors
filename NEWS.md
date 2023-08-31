@@ -1,6 +1,7 @@
-# simplecolors (development version)
+# simplecolors 0.1.2
 - Fix github URLs & news format #56
 - Replace Travis CI with GitHub Actions #46
+- Fix package alias #57
 
 # simplecolors 0.1.1 
 ### Hot fix for CRAN

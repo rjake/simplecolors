@@ -1,6 +1,6 @@
 Package: simplecolors
 Title: Access Color Names Using a Standardized Nomenclature
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person(given = "Jake",
            family = "Riley",
@@ -33,5 +33,5 @@ License: GNU General Public License
 VignetteBuilder: knitr
 Language: en-US
 LazyData: true
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.3
 Encoding: UTF-8
