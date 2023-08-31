@@ -9,6 +9,5 @@
 #'@section Color palettes:
 #' There are several functions that are prefixed with "sc_". These generate palettes of colors and can return hex codes (default), a table, or a plot showing the colors selected.
 #'
-#' @docType package
 #' @name simplecolors
-NULL
+"_PACKAGE"
