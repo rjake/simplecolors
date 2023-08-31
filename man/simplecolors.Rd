@@ -3,6 +3,7 @@
 \docType{package}
 \name{simplecolors}
 \alias{simplecolors}
+\alias{simplecolors-package}
 \title{simplecolors: A package for accessing color names using a standardized nomenclature}
 \description{
 The simplecolors package provides two categories of functions:
@@ -18,3 +19,15 @@ The sc() function is the main way to access color names. Colors can be called by
 There are several functions that are prefixed with "sc_". These generate palettes of colors and can return hex codes (default), a table, or a plot showing the colors selected.
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/rjake/simplecolors}
+  \item Report bugs at \url{https://github.com/rjake/simplecolors/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Jake Riley \email{rjake@sas.upenn.edu}
+
+}
