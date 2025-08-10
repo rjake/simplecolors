@@ -2,8 +2,8 @@
 % Please edit documentation in R/simplecolors.R
 \docType{package}
 \name{simplecolors}
-\alias{simplecolors}
 \alias{simplecolors-package}
+\alias{simplecolors}
 \title{simplecolors: A package for accessing color names using a standardized nomenclature}
 \description{
 The simplecolors package provides two categories of functions:
