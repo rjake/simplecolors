@@ -104,11 +104,10 @@ build_colors <- function() {
 #' Show all available colors
 #'
 #' @description Plots all available color values.
-#' @return Returns a plot object
+#' @return Returns a ggplot object
 #' @details Labels can be added by using the argument \code{labels = TRUE}
 #'
 #' @param labels logical TRUE (default) will plot the color with color names, FALSE will plot the colors only
-#' @return ggplot
 #'
 #' @importFrom dplyr mutate
 #' @importFrom forcats fct_rev

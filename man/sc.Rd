@@ -9,6 +9,9 @@ sc(...)
 \arguments{
 \item{...}{the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"}
 }
+\value{
+a vector of hex codes
+}
 \description{
 Specify color(s) by name
 }

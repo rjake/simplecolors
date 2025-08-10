@@ -15,6 +15,9 @@ sc_across(palette = "ROYGTBVPGy", light = 3, sat = "", return = NULL)
 
 \item{return}{defaults to returning hex codes but can also return a table or plot of the generated palette}
 }
+\value{
+can return a vector of hex codes, a table or a plot
+}
 \description{
 Generates a palette within across hues
 }

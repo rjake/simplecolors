@@ -10,9 +10,7 @@ show_colors(labels = FALSE)
 \item{labels}{logical TRUE (default) will plot the color with color names, FALSE will plot the colors only}
 }
 \value{
-Returns a plot object
-
-ggplot
+Returns a ggplot object
 }
 \description{
 Plots all available color values.

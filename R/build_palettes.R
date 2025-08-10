@@ -1,7 +1,7 @@
 #' Specify color(s) by name
 #'
 #' @param ... the unique color names used in the package, ex: "brightred5", "grey4", "dullblue2"
-#'
+#' @return a vector of hex codes
 #' @export
 #'
 #' @importFrom stats setNames
@@ -80,7 +80,7 @@ specify_output <- function(df, return = NULL){
 #' @param light the lightness of the color, ex: 1:5
 #' @param sat the saturation of the color, ex: "bright", "muted", "dull" or "" (base)
 #' @param return defaults to returning hex codes but can also return a table or plot of the generated palette
-#'
+#' @return can return a vector of hex codes, a table or a plot
 #' @export
 #'
 #' @importFrom dplyr filter left_join mutate select arrange pull
@@ -138,6 +138,7 @@ sc_within <- function(hue,
 #' @param sat the saturation value to hold constant ("bright", "muted", "dull", "")
 #' @param return defaults to returning hex codes but can also return a table or plot of the generated palette
 #'
+#' @return can return a vector of hex codes, a table or a plot
 #' @export
 #'
 #' @importFrom dplyr filter left_join mutate

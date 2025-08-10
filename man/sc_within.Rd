@@ -42,6 +42,9 @@ sc_grey(light = 2:5, sat = "", return = NULL)
 
 \item{return}{defaults to returning hex codes but can also return a table or plot of the generated palette}
 }
+\value{
+can return a vector of hex codes, a table or a plot
+}
 \description{
 Generates a palette within 1 hue
 }
