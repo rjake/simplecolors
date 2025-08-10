@@ -3,6 +3,7 @@
 - Replace Travis CI with GitHub Actions #46
 - Fix package alias #57
 - Update pkgdown aesthetics, links, alt-text #59
+- Update ggplot test #60
 
 # simplecolors 0.1.1 
 ### Hot fix for CRAN
