@@ -23,6 +23,7 @@ There are several functions that are prefixed with "sc_". These generate palette
 Useful links:
 \itemize{
   \item \url{https://github.com/rjake/simplecolors}
+  \item \url{https://rjake.github.io/simplecolors/}
   \item Report bugs at \url{https://github.com/rjake/simplecolors/issues}
 }
 
