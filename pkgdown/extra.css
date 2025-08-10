@@ -1,0 +1,4 @@
+.navbar-nav .nav-item>.nav-link {
+    border: unset;
+    background-color: unset;
+}

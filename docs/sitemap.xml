@@ -1,51 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/articles/intro.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/color_table.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>/reference/reexports.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sc.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sc_across.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sc_within.html</loc>
-  </url>
-  <url>
-    <loc>/reference/show_colors.html</loc>
-  </url>
-  <url>
-    <loc>/reference/simplecolors.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://rjake.github.io/simplecolors/404.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/articles/index.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/articles/intro.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/authors.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/index.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/LICENSE-text.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/news/index.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/reference/color_table.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/reference/index.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/reference/pipe.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/reference/reexports.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/reference/sc.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/reference/sc_across.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/reference/sc_within.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/reference/show_colors.html</loc></url>
+<url><loc>https://rjake.github.io/simplecolors/reference/simplecolors.html</loc></url>
 </urlset>
+

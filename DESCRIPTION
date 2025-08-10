@@ -11,7 +11,7 @@ Description: A curated set of colors that are called using
     "brightblue4" and "mutedred2". Functions exists to return individual colors 
     by name or to build palettes across or within hues. Most functions allow you 
     to visualize the palettes in addition to returning the desired hex codes.
-URL: https://github.com/rjake/simplecolors
+URL: https://github.com/rjake/simplecolors, https://rjake.github.io/simplecolors/
 BugReports: https://github.com/rjake/simplecolors/issues
 Imports: 
     colorspace,
@@ -33,5 +33,5 @@ License: GNU General Public License
 VignetteBuilder: knitr
 Language: en-US
 LazyData: true
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Encoding: UTF-8
