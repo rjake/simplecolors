@@ -65,6 +65,11 @@ sc("brightgreen2", "mutedblue3")
 #> "#8FFF8F" "#5E82C9"
 ```
 
+At anytime, you can see all of the colors using `show_colors()`
+```{r eval=FALSE}
+show_colors(labels = TRUE)
+```
+![](../man/figures/color_names.png){width=600px}
 
 For the rest of this tutorial I'm going to show you how to use this package to enhance your color choices in `ggplot2`. First, let's look at the output of base R colors. Although the terms "lightblue" and "navyblue" are common ways to talk about the lightness of blue, when we call them as raw colors they don't have the same "feel" as they go light to dark. 
 
@@ -165,10 +170,3 @@ or a table
 ```{r}
 sc_pink(return = "table")
 ```
-
-# All the colors
-At anytime, you can see all of the colors using `show_colors()`
-```{r eval=FALSE}
-show_colors(labels = TRUE)
-```
-![](../man/figures/color_names.png){width=600px}

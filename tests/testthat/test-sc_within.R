@@ -16,7 +16,7 @@ test_that("sc_within returns ggplot", {
     light = 1:2,
     return = "plot"
   )
-  expect_equal(is(x), "gg")
+  expect_true(ggplot2::is_ggplot(x))
 
 })
 
