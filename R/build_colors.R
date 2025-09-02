@@ -111,7 +111,8 @@ build_colors <- function() {
 #'
 #' @importFrom dplyr mutate
 #' @importFrom forcats fct_rev
-#' @importFrom ggplot2 ggplot aes facet_wrap geom_tile geom_label scale_fill_identity labs theme element_rect
+#' @importFrom ggplot2 ggplot aes facet_wrap geom_tile geom_label scale_fill_identity
+#' labs theme element_rect scale_color_identity theme_void theme element_blank
 #'
 #' @export
 #'
@@ -137,9 +138,9 @@ show_colors <- function(labels = FALSE) {
   p <-
     ggplot(df, aes(x, y)) +
     facet_wrap(~facet, nrow = 3, scales = "free_y") +
-    geom_tile(aes(fill = hex), color = "grey90") +
+    geom_tile(aes(fill = hex), color = "white") +
     geom_tile(
-      aes(x = factor(""), y = factor(3)),
+      data = ~filter(.x, x == "", y == 3),
       fill = NA, color = "white", linewidth = 1.5
     ) +
     scale_fill_identity() +
@@ -148,17 +149,27 @@ show_colors <- function(labels = FALSE) {
       x = "Saturation",
       y = "Light",
       subtitle = 'The default is a lightness of 3 and can be specified by color name alone
-ex. "red", "violet", "teal"
-or with modifiers "brightpink2", "mutedred3", "blue4"'
+ex. "red", "violet", "teal"'
     )
 
   if (labels) {
     p <-
       p +
-      geom_label(
+      ggplot2::geom_text(
         data = df,
-        aes(x, y, label = color_name),
-        label.size = 0, alpha = 0.8
+        aes(
+          x,
+          y,
+          label = color_name,
+          color = ifelse(light > 3, "white", "black")
+        ),
+        fontface = "bold",
+        size = 2.5
+      ) +
+      scale_color_identity() +
+      theme_void() +
+      theme(
+        strip.text = element_blank()
       )
   }
 

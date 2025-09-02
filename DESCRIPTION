@@ -1,6 +1,6 @@
 Package: simplecolors
 Title: Access Color Names Using a Standardized Nomenclature
-Version: 0.1.3
+Version: 0.1.4
 Authors@R: 
     person(given = "Jake",
            family = "Riley",

@@ -12,7 +12,7 @@ test_that("sc_across returns ggplot", {
     palette = "BO",
     return = "plot"
   )
-  expect_equal(is(x), "gg")
+  expect_true(ggplot2::is_ggplot(x))
 })
 
 test_that("sc_across plot in right order", {
