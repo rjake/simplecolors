@@ -1,3 +1,6 @@
+# simplecolors 0.1.4
+- Address breaking changes with ggplot2 4.0.0 #62
+
 # simplecolors 0.1.3
 - Update pkgdown aesthetics, links, alt-text #59
 - Update ggplot test #60
